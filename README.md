@@ -1,84 +1,53 @@
-# Snippeter
+# snippeter
 
-This project was generated using [Nx](https://nx.dev).
+## Start frontend, backend and VSCode at the same time
 
-<p align="center"><img src="https://raw.githubusercontent.com/nrwl/nx/master/nx-logo.png" width="450"></p>
+Go to folder of project, and type
 
-🔎 **Nx is a set of Extensible Dev Tools for Monorepos.**
+```
+serve-app.bat
+```
 
-## Quick Start & Documentation
+or create link on desktop.
 
-[Nx Documentation](https://nx.dev/angular)
+## Serving
 
-[10-minute video showing all Nx features](https://nx.dev/angular/getting-started/what-is-nx)
+### Serve frontend
 
-[Interactive Tutorial](https://nx.dev/angular/tutorial/01-create-application)
+```
+ng serve snippeter
+```
 
-## Adding capabilities to your workspace
+### Serve backend
 
-Nx supports many plugins which add capabilities for developing different types of applications and different tools.
+```
+ng serve api
+```
 
-These capabilities include generating applications, libraries, etc as well as the devtools to test, and build projects as well.
+## Testing
 
-Below are some plugins which you can add to your workspace:
+### Test frontend
 
-- [Angular](https://angular.io)
-  - `ng add @nrwl/angular`
-- [React](https://reactjs.org)
-  - `ng add @nrwl/react`
-- Web (no framework frontends)
-  - `ng add @nrwl/web`
-- [Nest](https://nestjs.com)
-  - `ng add @nrwl/nest`
-- [Express](https://expressjs.com)
-  - `ng add @nrwl/express`
-- [Node](https://nodejs.org)
-  - `ng add @nrwl/node`
+```
+ng test snippeter
+```
 
-## Generate an application
+### Test backend
 
-Run `ng g @nrwl/angular:app my-app` to generate an application.
+```
+ng test api
+```
 
-> You can use any of the plugins above to generate applications as well.
+## Building app
 
-When using Nx, you can create multiple applications and libraries in the same workspace.
+## Build frontend
 
-## Generate a library
+```
+ng build snippeter
+```
 
-Run `ng g @nrwl/angular:lib my-lib` to generate a library.
+## Build backend
 
-> You can also use any of the plugins above to generate libraries as well.
-
-Libraries are sharable across libraries and applications. They can be imported from `@snippeter/mylib`.
-
-## Development server
-
-Run `ng serve my-app` for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng g component my-component --project=my-app` to generate a new component.
-
-## Build
-
-Run `ng build my-app` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test my-app` to execute the unit tests via [Jest](https://jestjs.io).
-
-Run `nx affected:test` to execute the unit tests affected by a change.
-
-## Running end-to-end tests
-
-Run `ng e2e my-app` to execute the end-to-end tests via [Cypress](https://www.cypress.io).
-
-Run `nx affected:e2e` to execute the end-to-end tests affected by a change.
-
-## Understand your workspace
-
-Run `nx dep-graph` to see a diagram of the dependencies of your projects.
-
-## Further help
-
-Visit the [Nx Documentation](https://nx.dev/angular) to learn more.
+```
+ng build api
+```
