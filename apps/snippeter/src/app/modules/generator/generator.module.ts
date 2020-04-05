@@ -12,7 +12,7 @@ import { BodyComponent } from './components/body/body.component';
 import { CopySnippetComponent } from './components/copy-snippet/copy-snippet.component';
 import { ConstructsComponent } from './components/constructs/constructs.component';
 import { ConstructSelectorsComponent } from './components/construct-selectors/construct-selectors.component';
-import { MaterialModule } from '../material/material.module';
+import { MaterialModule } from '../../material.module';
 import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({

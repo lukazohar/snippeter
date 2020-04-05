@@ -5,10 +5,10 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './navbar/navbar.component';
-import { MaterialModule } from './modules/material/material.module';
+import { MaterialModule } from './material.module';
 import { LoginComponent } from './authentication-modals/login/login.component';
 import { RegisterComponent } from './authentication-modals/register/register.component';
-import { AppRoutingModule } from './modules/routing/app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 import { GeneratorModule } from './modules/generator/generator.module';
 
 @NgModule({
