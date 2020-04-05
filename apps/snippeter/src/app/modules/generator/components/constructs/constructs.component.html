@@ -1,0 +1,50 @@
+<!-- Tabstops -->
+<mat-expansion-panel [expanded]="tabstops.length != 0">
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      tabstops
+    </mat-panel-title>
+  </mat-expansion-panel-header>
+
+  <mat-action-row>
+    <button mat-icon-button aria-label="Remove" (click)="removeTabstops(tabsList.selectedOptions.selected)">
+      <mat-icon (click)="removeTabstops(tabsList.selectedOptions.selected)">remove</mat-icon>
+    </button>
+  </mat-action-row>
+
+  <mat-selection-list #tabsList>
+    <mat-list-option *ngFor="let tabstop of tabstops" [value]="tabstop">
+      {{ tabstop.stopId }}
+    </mat-list-option>
+  </mat-selection-list>
+</mat-expansion-panel>
+
+<!-- Placeholders -->
+<mat-expansion-panel [expanded]="placeholders.length != 0">
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      placeholders
+    </mat-panel-title>
+  </mat-expansion-panel-header>
+
+  <mat-action-row>
+    <button mat-icon-button aria-label="Remove" (click)="removePlaceholders(placeholdersList.selectedOptions.selected)">
+      <mat-icon>remove</mat-icon>
+    </button>
+  </mat-action-row>
+
+  <mat-selection-list #placeholdersList>
+    <mat-list-option *ngFor="let placeholder of placeholders" [value]="placeholder">
+      {{ placeholder.stopId }}
+    </mat-list-option>
+  </mat-selection-list>
+</mat-expansion-panel>
+
+<!-- Choices -->
+<mat-expansion-panel>
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      choices
+    </mat-panel-title>
+  </mat-expansion-panel-header>
+</mat-expansion-panel>
