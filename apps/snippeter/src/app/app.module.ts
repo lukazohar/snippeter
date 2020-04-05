@@ -9,7 +9,7 @@ import { MaterialModule } from './material.module';
 import { LoginComponent } from './authentication-modals/login/login.component';
 import { RegisterComponent } from './authentication-modals/register/register.component';
 import { AppRoutingModule } from './app-routing.module';
-import { GeneratorModule } from './modules/generator/generator.module';
+import { GeneratorModule } from './generator/generator.module';
 
 @NgModule({
   declarations: [
