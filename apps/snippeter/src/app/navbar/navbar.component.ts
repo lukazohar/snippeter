@@ -3,7 +3,7 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { MatDialog } from '@angular/material/dialog';
-import { LoginComponent } from '../login/login.component';
+import { LoginComponent } from '../authentication-modals/login/login.component';
 
 @Component({
   selector: 'snippeter-navbar',
