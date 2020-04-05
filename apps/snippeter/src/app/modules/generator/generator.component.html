@@ -1,1 +1,59 @@
-<p>generator works!</p>
+<mat-card>
+  <mat-card-content [ngStyle]="{ 'font-size': '18px' }">
+    <div class="row">
+      <div class="col">
+        <snippeter-name [name]="name"></snippeter-name>
+      </div>
+      <div class="col">
+        <snippeter-prefix [prefix]="prefix"></snippeter-prefix>
+      </div>
+      <snippeter-copy-snippet
+        [name]="name.value"
+        [prefix]="prefix.value"
+        [description]="description.value"
+        [body]="body.value"
+      ></snippeter-copy-snippet>
+    </div>
+    <div class="row">
+      <div class="col">
+        <snippeter-description
+          [description]="description"
+        ></snippeter-description>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6">
+        <snippeter-construct-selectors
+          (selectedConstruct)="selectedConstruct = $event"
+        ></snippeter-construct-selectors>
+      </div>
+    </div>
+    <!-- Body -->
+    <div class="row">
+      <p [ngStyle]="{ 'font-size': '11px' }">
+        *select construct and press Enter
+      </p>
+    </div>
+    <div class="row">
+      <div class="col">
+        <snippeter-body
+          [body]="body"
+          (keydown.enter)="
+            this.constructsComponent.addConstruct(
+              this.selectedConstruct,
+              $event.target.selectionStart
+            )
+          "
+        ></snippeter-body>
+      </div>
+      <div class="col">
+        <snippeter-constructs
+          [body]="body"
+          [tabstops]="tabstops"
+          [placeholders]="placeholders"
+          [choices]="choices"
+        ></snippeter-constructs>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
