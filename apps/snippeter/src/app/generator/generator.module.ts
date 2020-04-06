@@ -13,7 +13,7 @@ import { CopySnippetComponent } from './components/copy-snippet/copy-snippet.com
 import { ConstructsComponent } from './components/constructs/constructs.component';
 import { ConstructSelectorsComponent } from './components/construct-selectors/construct-selectors.component';
 import { MaterialModule } from '../material.module';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -29,10 +29,11 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     GeneratorRoutingModule,
+    FormsModule,
     ReactiveFormsModule,
     MaterialModule,
     ClipboardModule
   ],
   bootstrap: [GeneratorComponent]
 })
-export class GeneratorModule { }
+export class GeneratorModule {}

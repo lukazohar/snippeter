@@ -16,6 +16,7 @@ export class ConstructsComponent implements OnInit {
   @Input() body: FormControl;
 
   placeholdersTags: {};
+  placeholdersDeleting = false;
 
   constructor() {}
 
@@ -58,15 +59,16 @@ export class ConstructsComponent implements OnInit {
     while ((match = regex.exec(bodyText)) != null) {
       this.placeholdersTags[match.index] = match[0];
     }
+    placeholders.splice(0, placeholders.length);
 
     // Maps number of string matches: $12 -> 12 and returns that number as stopId parameter
-    placeholders = bodyTextPlaceholders.map(
-      (e: string): IPlaceholder => ({
+    bodyTextPlaceholders.forEach((e: string) => {
+      placeholders.push({
         // It should return only 1 item in array, which is number of stop
         stopId: Number(e.match(/[1-9][0-9]*(?=:)/g)[0]),
         name: e.substring(e.indexOf(':') + 1, e.indexOf('}'))
-      })
-    );
+      });
+    });
     // Depending on position of placeholders in text, array can contain un-ordered stopIds, thats why sort ([$1, $3, $2] => [$1, $2, $3])
     placeholders.sort(
       (placeholder1: IPlaceholder, placeholder2: IPlaceholder) =>
