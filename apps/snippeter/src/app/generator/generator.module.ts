@@ -14,6 +14,8 @@ import { ConstructsComponent } from './components/constructs/constructs.componen
 import { ConstructSelectorsComponent } from './components/construct-selectors/construct-selectors.component';
 import { MaterialModule } from '../material.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { UploadComponent } from './components/toolbar/upload/upload.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     BodyComponent,
     CopySnippetComponent,
     ConstructsComponent,
-    ConstructSelectorsComponent
+    ConstructSelectorsComponent,
+    UploadComponent
   ],
   imports: [
     CommonModule,
@@ -32,7 +35,8 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule,
     MaterialModule,
-    ClipboardModule
+    ClipboardModule,
+    HttpClientModule
   ],
   bootstrap: [GeneratorComponent]
 })

@@ -27,6 +27,14 @@
           (selectedConstruct)="selectedConstruct = $event"
         ></snippeter-construct-selectors>
       </div>
+      <div class="col-6">
+        <snippeter-upload
+          [name]="name.value"
+          [prefix]="prefix.value"
+          [description]="description.value"
+          [body]="body.value"
+        ></snippeter-upload>
+      </div>
     </div>
     <!-- Body -->
     <div class="row">
