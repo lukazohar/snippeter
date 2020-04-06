@@ -1,27 +1,48 @@
 import {
   Controller,
   Get,
-  ParseIntPipe,
   Param,
   Post,
   Patch,
-  Delete
+  Delete,
+  Body
 } from '@nestjs/common';
 import { SnippetService } from './snippet.service';
+import {
+  ISnippet,
+  CreateSnippetDto,
+  UpdateSnippetDto
+} from './snippet.interface';
 
-@Controller('snippet')
+@Controller('snippets')
 export class SnippetController {
   constructor(private snippetsService: SnippetService) {}
 
+  @Get()
+  getSnippets(): Promise<ISnippet[]> {
+    return this.snippetsService.findAll();
+  }
+
   @Get(':id')
-  getSnippetById(@Param('id', ParseIntPipe) id: number) {}
+  getSnippetById(@Param('id') id: string): Promise<ISnippet> {
+    return this.snippetsService.findOne(id);
+  }
 
   @Post()
-  createSnippet() {}
+  createSnippet(@Body() newSnippet: CreateSnippetDto): Promise<ISnippet> {
+    return this.snippetsService.create(newSnippet);
+  }
 
   @Patch(':id')
-  updateSnippet() {}
+  updateSnippet(
+    @Param('id') id: string,
+    @Body() updatedSnippet: UpdateSnippetDto
+  ): Promise<ISnippet> {
+    return this.snippetsService.update(id, updatedSnippet);
+  }
 
   @Delete(':id')
-  deleteSnippet() {}
+  deleteSnippet(@Param('id') id: string) {
+    this.snippetsService.delete(id);
+  }
 }
