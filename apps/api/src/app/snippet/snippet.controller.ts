@@ -13,7 +13,7 @@ import {
   ISnippet,
   CreateSnippetDto,
   UpdateSnippetDto
-} from './snippet.interface';
+} from '@snippeter/api-interfaces';
 
 @Controller('snippets')
 export class SnippetController {

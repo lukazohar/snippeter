@@ -1,6 +1,7 @@
 export interface ISnippet {
-  name: string;
-  prefix: string;
-  description: string;
-  body: string;
+  id?: string;
+  config: ISnippetConfig;
+  createdAt: Date;
+  modifiedAt: Date;
+  public?: boolean;
 }
