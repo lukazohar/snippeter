@@ -1,3 +1,5 @@
+import { ISnippetConfig } from './snippet-config';
+
 export interface ISnippet {
   id?: string;
   config: ISnippetConfig;

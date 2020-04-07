@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { UploadSnippetService } from '../../../services/upload-snippet/upload-snippet.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ClipboardService } from 'ngx-clipboard';
-import { ISnippet } from '@snippeter/api-interfaces';
+import { ISnippet, ISnippetConfig } from '@snippeter/api-interfaces';
 
 @Component({
   selector: 'snippeter-upload',
@@ -24,7 +24,7 @@ export class UploadComponent implements OnInit {
   ngOnInit() {}
 
   upload() {
-    const snippet: ISnippet = {
+    const snippet: ISnippetConfig = {
       name: this.name,
       prefix: this.prefix,
       description: this.description,
