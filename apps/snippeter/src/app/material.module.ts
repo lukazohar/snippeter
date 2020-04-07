@@ -16,26 +16,9 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { TextFieldModule } from '@angular/cdk/text-field';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
-  imports: [
-    BrowserAnimationsModule,
-    MatSidenavModule,
-    MatToolbarModule,
-    MatListModule,
-    MatIconModule,
-    MatButtonModule,
-    MatDialogModule,
-    MatInputModule,
-    MatSelectModule,
-    MatRadioModule,
-    MatCardModule,
-    MatExpansionModule,
-    MatSnackBarModule,
-    MatButtonToggleModule,
-    TextFieldModule,
-    MatMenuModule
-  ],
   exports: [
     BrowserAnimationsModule,
     MatSidenavModule,
@@ -52,7 +35,8 @@ import { MatMenuModule } from '@angular/material/menu';
     MatSnackBarModule,
     MatButtonToggleModule,
     TextFieldModule,
-    MatMenuModule
+    MatMenuModule,
+    MatTooltipModule
   ]
 })
 export class MaterialModule {}

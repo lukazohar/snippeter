@@ -2,16 +2,16 @@
   #group="matButtonToggleGroup"
   (change)="changeSelectedConstructValue(toggleGroup.value)"
 >
-  <mat-button-toggle [value]="'tabstop'">
+  <mat-button-toggle [value]="'tabstop'" matTooltip="tabstop">
     <mat-icon>unfold_less</mat-icon>
   </mat-button-toggle>
-  <mat-button-toggle [value]="'placeholder'">
+  <mat-button-toggle [value]="'placeholder'" matTooltip="placeholder">
     <mat-icon>space_bar</mat-icon>
   </mat-button-toggle>
-  <mat-button-toggle [value]="'choice'">
+  <mat-button-toggle [value]="'choice'" matTooltip="choice">
     <mat-icon>notes</mat-icon>
   </mat-button-toggle>
-  <mat-button-toggle [value]="''" [checked]="true">
+  <mat-button-toggle [value]="''" [checked]="true" matTooltip="clear selection">
     <mat-icon>clear</mat-icon>
   </mat-button-toggle>
 </mat-button-toggle-group>

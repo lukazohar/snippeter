@@ -33,7 +33,7 @@ export class UploadComponent implements OnInit {
     this.uploadSnippetService.uploadSnippet(snippet).subscribe(res => {
       this.snackBarSuccess(`uploaded snippet and copied link`);
       this.clipboardService.copyFromContent(
-        `https://www.snippeter.com/${res._id}`
+        `${window.location.origin}/${res._id}`
       );
     });
   }
