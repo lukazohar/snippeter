@@ -16,6 +16,8 @@ import { MaterialModule } from '../material.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { UploadComponent } from './components/toolbar/upload/upload.component';
+import { DownloadComponent } from './components/toolbar/download/download.component';
+import { DownloadModalComponent } from './components/toolbar/download/download-modal/download-modal.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { UploadComponent } from './components/toolbar/upload/upload.component';
     CopySnippetComponent,
     ConstructsComponent,
     ConstructSelectorsComponent,
-    UploadComponent
+    UploadComponent,
+    DownloadComponent,
+    DownloadModalComponent
   ],
   imports: [
     CommonModule,

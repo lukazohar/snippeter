@@ -15,6 +15,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { TextFieldModule } from '@angular/cdk/text-field';
+import { MatMenuModule } from '@angular/material/menu';
 
 @NgModule({
   imports: [
@@ -32,7 +33,8 @@ import { TextFieldModule } from '@angular/cdk/text-field';
     MatExpansionModule,
     MatSnackBarModule,
     MatButtonToggleModule,
-    TextFieldModule
+    TextFieldModule,
+    MatMenuModule
   ],
   exports: [
     BrowserAnimationsModule,
@@ -49,7 +51,8 @@ import { TextFieldModule } from '@angular/cdk/text-field';
     MatExpansionModule,
     MatSnackBarModule,
     MatButtonToggleModule,
-    TextFieldModule
+    TextFieldModule,
+    MatMenuModule
   ]
 })
 export class MaterialModule {}
