@@ -5,7 +5,8 @@ import {
   Post,
   Patch,
   Delete,
-  Body
+  Body,
+  HttpCode
 } from '@nestjs/common';
 import { SnippetService } from './snippet.service';
 import {
@@ -19,6 +20,7 @@ export class SnippetController {
   constructor(private snippetsService: SnippetService) {}
 
   @Get()
+  @HttpCode(404)
   getSnippets(): Promise<ISnippet[]> {
     return this.snippetsService.findAll();
   }
@@ -34,6 +36,7 @@ export class SnippetController {
   }
 
   @Patch(':id')
+  @HttpCode(404)
   updateSnippet(
     @Param('id') id: string,
     @Body() updatedSnippet: UpdateSnippetDto
@@ -42,6 +45,7 @@ export class SnippetController {
   }
 
   @Delete(':id')
+  @HttpCode(404)
   deleteSnippet(@Param('id') id: string) {
     this.snippetsService.delete(id);
   }
