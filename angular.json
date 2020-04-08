@@ -15,7 +15,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/apps/snippeter",
+            "outputPath": "docs",
             "index": "apps/snippeter/src/index.html",
             "main": "apps/snippeter/src/main.ts",
             "polyfills": "apps/snippeter/src/polyfills.ts",
@@ -25,7 +25,10 @@
               "apps/snippeter/src/favicon.ico",
               "apps/snippeter/src/assets"
             ],
-            "styles": ["apps/snippeter/src/styles.scss"],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
+              "apps/snippeter/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -208,7 +211,8 @@
     }
   },
   "cli": {
-    "defaultCollection": "@nrwl/angular"
+    "defaultCollection": "@nrwl/angular",
+    "analytics": "09586590-c862-4f07-b55a-58b698697c65"
   },
   "schematics": {
     "@nrwl/angular:application": {

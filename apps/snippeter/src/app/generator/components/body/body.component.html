@@ -1,0 +1,13 @@
+<mat-form-field appearance="outline">
+  <mat-label>body</mat-label>
+  <textarea
+    matInput
+    cdkTextareaAutosize
+    [formControl]="body"
+    #bodyTextField="cdkTextareaAutosize"
+    cdkAutosizeMinRows="1"
+    cdkAutosizeMaxRows="100"
+    [ngStyle]="{ 'font-size': '14px' }"
+    id="textarea"
+  ></textarea>
+</mat-form-field>

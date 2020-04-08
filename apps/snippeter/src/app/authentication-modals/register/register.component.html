@@ -1,0 +1,49 @@
+<h1 mat-dialog-title class="center">register</h1>
+<div mat-dialog-content>
+  <p>
+    <mat-form-field appearance="outline">
+      <mat-label>email</mat-label>
+      <input
+        matInput
+        type="email"
+        formControlName="email"
+        placeholder="email"
+      />
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="outline">
+      <mat-label>nickname</mat-label>
+      <input matInput formControlName="nickname" placeholder="nickname" />
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="outline">
+      <mat-label>first name</mat-label>
+      <input matInput formControlName="firstName" placeholder="first name" />
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="outline">
+      <mat-label>last name</mat-label>
+      <input matInput formControlName="lastName" placeholder="last name" />
+    </mat-form-field>
+  </p>
+
+  <p>
+    <mat-form-field appearance="outline">
+      <mat-label>password</mat-label>
+      <input
+        matInput
+        type="password"
+        formControlName="password"
+        placeholder="password"
+      />
+    </mat-form-field>
+  </p>
+</div>
+<div mat-dialog-actions class="center">
+  <button mat-flat-button (click)="register()" color="primary">
+    register
+  </button>
+</div>
