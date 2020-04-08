@@ -5,7 +5,7 @@ import {
   ISnippet,
   CreateSnippetDto,
   UpdateSnippetDto
-} from './snippet.interface';
+} from '@snippeter/api-interfaces';
 
 @Injectable()
 export class SnippetService {
