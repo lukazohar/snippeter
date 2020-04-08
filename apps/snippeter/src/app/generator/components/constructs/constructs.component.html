@@ -6,7 +6,7 @@
     </mat-panel-title>
   </mat-expansion-panel-header>
 
-  <mat-action-row>
+  <mat-action-row *ngIf="tabstops.length != 0">
     <button
       mat-icon-button
       aria-label="Remove"
@@ -32,7 +32,7 @@
       placeholders
     </mat-panel-title>
   </mat-expansion-panel-header>
-  <mat-action-row>
+  <mat-action-row *ngIf="placeholders.length != 0">
     <button
       mat-icon-button
       aria-label="Remove"
