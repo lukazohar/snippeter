@@ -53,9 +53,14 @@
         <snippeter-body
           [body]="body"
           (keydown.enter)="
-            this.constructsComponent.addConstruct(
+            this.bodyComponent.setCursorPosition(
+              this.constructsComponent.addConstruct(
+                this.selectedConstruct,
+                $event.target.selectionStart,
+                $event
+              ),
               this.selectedConstruct,
-              $event.target.selectionStart
+              this.constructsComponent.nextStopIndex() - 1
             )
           "
         ></snippeter-body>

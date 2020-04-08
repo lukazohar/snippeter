@@ -120,17 +120,24 @@ export class ConstructsComponent implements OnInit {
 
   removeChoice() {}
 
-  addConstruct(constructType: string, stringIndex: any) {
+  addConstruct(
+    constructType: string,
+    stringIndex: any,
+    event: KeyboardEvent
+  ): number {
     switch (constructType) {
       case 'tabstop': {
+        event.preventDefault();
         this.addTabstop(stringIndex);
         break;
       }
       case 'placeholder': {
+        event.preventDefault();
         this.addPlaceholder(stringIndex);
         break;
       }
       case 'choice': {
+        event.preventDefault();
         this.addChoice(stringIndex);
         break;
       }
@@ -138,6 +145,7 @@ export class ConstructsComponent implements OnInit {
         break;
       }
     }
+    return stringIndex;
   }
 
   nextStopIndex(): number {
