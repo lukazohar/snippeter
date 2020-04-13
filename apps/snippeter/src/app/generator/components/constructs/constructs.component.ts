@@ -15,7 +15,7 @@ export class ConstructsComponent implements OnInit {
 
   @Input() body: FormControl;
 
-  placeholdersTags: {};
+  placeholdersTags: Map<number, number> = new Map();
   placeholdersDeleting = false;
 
   constructor() {}
@@ -26,10 +26,14 @@ export class ConstructsComponent implements OnInit {
 
   scanBodyOnChanges() {
     this.body.valueChanges.subscribe((bodyText: string) => {
-      this.scanForTabstops(bodyText, this.tabstops);
-      this.scanForPlaceholders(bodyText, this.placeholders);
-      this.scanForChoices(bodyText);
+      this.scanForChanges(bodyText);
     });
+  }
+
+  scanForChanges(bodyText: string) {
+    this.scanForTabstops(bodyText, this.tabstops);
+    this.scanForPlaceholders(bodyText, this.placeholders);
+    this.scanForChoices(bodyText);
   }
 
   scanForTabstops(bodyText: string, tabstops: Array<ITabstop>) {
@@ -53,12 +57,17 @@ export class ConstructsComponent implements OnInit {
     const regex = /[$][{][1-9][0-9]*[:][a-zA-Z0-9 ]{0,}[}]/g;
     const bodyTextPlaceholders: any = bodyText.match(regex) || [];
 
-    this.placeholdersTags = new Object();
+    this.placeholdersTags = new Map();
     let match;
 
     while ((match = regex.exec(bodyText)) != null) {
-      this.placeholdersTags[match.index] = match[0];
+      const stopId: number = Number(
+        match[0].substring(2, match[0].indexOf(':'))
+      );
+      const index: number = match.index;
+      this.placeholdersTags.set(stopId, index);
     }
+
     placeholders.splice(0, placeholders.length);
 
     // Maps number of string matches: $12 -> 12 and returns that number as stopId parameter
@@ -200,17 +209,17 @@ export class ConstructsComponent implements OnInit {
     this.placeholders.push(newPlaceholder);
   }
 
-  editPlaceholderName(index: number) {
+  editPlaceholderName(placeholder: IPlaceholder) {
     let currTextAreaValue = this.body.value;
 
-    const tagStartIndex = Object.keys(this.placeholdersTags)[index];
+    const tagStartIndex = this.placeholdersTags.get(placeholder.stopId);
 
     const valueStartIndex = currTextAreaValue.indexOf(':', tagStartIndex) + 1; // +1 to remove :
     const valueEndIndex = currTextAreaValue.indexOf('}', valueStartIndex);
 
     currTextAreaValue =
       currTextAreaValue.substring(0, valueStartIndex) +
-      this.placeholders[index].name +
+      placeholder.name +
       currTextAreaValue.substring(valueEndIndex);
 
     this.body.setValue(currTextAreaValue);

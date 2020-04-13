@@ -61,7 +61,8 @@
               ),
               this.selectedConstruct,
               this.constructsComponent.nextStopIndex() - 1
-            )
+            );
+            this.constructsComponent.scanForChanges(body.value)
           "
         ></snippeter-body>
       </div>

@@ -14,7 +14,6 @@ import { ConstructsComponent } from './components/constructs/constructs.componen
 import { ConstructSelectorsComponent } from './components/construct-selectors/construct-selectors.component';
 import { MaterialModule } from '../material.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
 import { UploadComponent } from './components/toolbar/upload/upload.component';
 import { DownloadComponent } from './components/toolbar/download/download.component';
 import { DownloadModalComponent } from './components/toolbar/download/download-modal/download-modal.component';
@@ -39,8 +38,7 @@ import { DownloadModalComponent } from './components/toolbar/download/download-m
     FormsModule,
     ReactiveFormsModule,
     MaterialModule,
-    ClipboardModule,
-    HttpClientModule
+    ClipboardModule
   ],
   bootstrap: [GeneratorComponent]
 })

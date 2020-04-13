@@ -63,7 +63,7 @@
   <!-- If editing placeholders -->
   <ng-template #placeholdersEditing>
     <mat-list>
-      <mat-list-item *ngFor="let placeholder of placeholders; let i = index">
+      <mat-list-item *ngFor="let placeholder of placeholders">
         <mat-form-field style="width: 20%;">
           <mat-label>stopId</mat-label>
           <input matInput type="number" [(ngModel)]="placeholder.stopId" />
@@ -74,7 +74,7 @@
           <input
             matInput
             [(ngModel)]="placeholder.name"
-            (keyup)="editPlaceholderName(i)"
+            (keyup)="editPlaceholderName(placeholder)"
           />
         </mat-form-field>
       </mat-list-item>
