@@ -33,7 +33,7 @@ export class ConstructsComponent implements OnInit {
   scanForChanges(bodyText: string) {
     this.scanForTabstops(bodyText, this.tabstops);
     this.scanForPlaceholders(bodyText, this.placeholders);
-    this.scanForChoices(bodyText);
+    this.scanForChoices(bodyText, this.choices);
   }
 
   scanForTabstops(bodyText: string, tabstops: Array<ITabstop>) {
@@ -85,8 +85,17 @@ export class ConstructsComponent implements OnInit {
     );
   }
 
-  scanForChoices(bodyText: string): Array<IChoice> {
-    return [];
+  scanForChoices(bodyText: string, choices: Array<IChoice>) {
+    choices.splice(0, choices.length);
+    const regex = /[$][{][1-9][0-9]*[|][a-zA-Z0-9,]*[|][}]/g;
+    const bodyTextChoices: any = bodyText.match(regex) || [];
+    bodyTextChoices.forEach((choice: string) => {
+      const newChoice: IChoice = {
+        stopId: Number(choice.split('|')[0].substring(2)),
+        placeholders: choice.split('|')[1].split(',')
+      };
+      choices.push(newChoice);
+    });
   }
 
   removeTabstops(tabsSelectionList: Array<MatListOption>) {
