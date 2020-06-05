@@ -15,7 +15,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "docs",
+            "outputPath": "dist/apps/snippeter",
             "index": "apps/snippeter/src/index.html",
             "main": "apps/snippeter/src/main.ts",
             "polyfills": "apps/snippeter/src/polyfills.ts",

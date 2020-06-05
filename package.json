@@ -5,7 +5,7 @@
   "scripts": {
     "ng": "ng",
     "nx": "nx",
-    "start": "ng serve",
+    "start": "node dist/apps/api/main",
     "build": "ng build",
     "test": "ng test",
     "lint": "nx workspace-lint && ng lint",
@@ -43,6 +43,7 @@
     "@nestjs/core": "^6.8.3",
     "@nestjs/mongoose": "^6.4.0",
     "@nestjs/platform-express": "^6.8.3",
+    "@nestjs/serve-static": "^2.1.1",
     "@nrwl/angular": "9.2.1",
     "core-js": "^2.5.4",
     "mongoose": "^5.9.7",
@@ -77,5 +78,8 @@
     "ts-node": "~7.0.0",
     "tslint": "~6.0.0",
     "typescript": "~3.8.3"
+  },
+  "engines": {
+    "node": "12.15.0"
   }
 }

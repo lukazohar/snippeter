@@ -1,0 +1,2095 @@
+{
+  "projectGraph": {
+    "nodes": {
+      "api-interfaces": {
+        "name": "api-interfaces",
+        "type": "lib",
+        "data": {
+          "root": "libs/api-interfaces",
+          "sourceRoot": "libs/api-interfaces/src",
+          "projectType": "library",
+          "schematics": {},
+          "architect": {
+            "lint": {
+              "builder": "@angular-devkit/build-angular:tslint",
+              "options": {
+                "tsConfig": [
+                  "libs/api-interfaces/tsconfig.lib.json",
+                  "libs/api-interfaces/tsconfig.spec.json"
+                ],
+                "exclude": [
+                  "**/node_modules/**",
+                  "!libs/api-interfaces/**"
+                ]
+              }
+            },
+            "test": {
+              "builder": "@nrwl/jest:jest",
+              "options": {
+                "jestConfig": "libs/api-interfaces/jest.config.js",
+                "tsConfig": "libs/api-interfaces/tsconfig.spec.json",
+                "passWithNoTests": true
+              }
+            }
+          },
+          "tags": [],
+          "files": [
+            {
+              "file": "libs/api-interfaces/jest.config.js",
+              "ext": ".js",
+              "mtime": 1585867208109.3005
+            },
+            {
+              "file": "libs/api-interfaces/README.md",
+              "ext": ".md",
+              "mtime": 1585867208106.4998
+            },
+            {
+              "file": "libs/api-interfaces/src/index.ts",
+              "ext": ".ts",
+              "mtime": 1586368739691.9028
+            },
+            {
+              "file": "libs/api-interfaces/src/lib/choice.ts",
+              "ext": ".ts",
+              "mtime": 1591391788167.1055
+            },
+            {
+              "file": "libs/api-interfaces/src/lib/dto/create-snippet.dto.ts",
+              "ext": ".ts",
+              "mtime": 1586370588524.424
+            },
+            {
+              "file": "libs/api-interfaces/src/lib/dto/update-snippet.dto.ts",
+              "ext": ".ts",
+              "mtime": 1586370588525.4216
+            },
+            {
+              "file": "libs/api-interfaces/src/lib/placeholder.ts",
+              "ext": ".ts",
+              "mtime": 1586370588526.419
+            },
+            {
+              "file": "libs/api-interfaces/src/lib/snippet-config.ts",
+              "ext": ".ts",
+              "mtime": 1586370588527.417
+            },
+            {
+              "file": "libs/api-interfaces/src/lib/snippet.ts",
+              "ext": ".ts",
+              "mtime": 1586370588528.4128
+            },
+            {
+              "file": "libs/api-interfaces/src/lib/tabstop.ts",
+              "ext": ".ts",
+              "mtime": 1586370588529.4126
+            },
+            {
+              "file": "libs/api-interfaces/tsconfig.json",
+              "ext": ".json",
+              "mtime": 1585867208106.9194
+            },
+            {
+              "file": "libs/api-interfaces/tsconfig.lib.json",
+              "ext": ".json",
+              "mtime": 1585867208106.9194
+            },
+            {
+              "file": "libs/api-interfaces/tsconfig.spec.json",
+              "ext": ".json",
+              "mtime": 1585867208110.2983
+            },
+            {
+              "file": "libs/api-interfaces/tslint.json",
+              "ext": ".json",
+              "mtime": 1585867208105.5542
+            }
+          ]
+        }
+      },
+      "snippeter-e2e": {
+        "name": "snippeter-e2e",
+        "type": "e2e",
+        "data": {
+          "root": "apps/snippeter-e2e",
+          "sourceRoot": "apps/snippeter-e2e/src",
+          "projectType": "application",
+          "architect": {
+            "e2e": {
+              "builder": "@nrwl/cypress:cypress",
+              "options": {
+                "cypressConfig": "apps/snippeter-e2e/cypress.json",
+                "tsConfig": "apps/snippeter-e2e/tsconfig.e2e.json",
+                "devServerTarget": "snippeter:serve"
+              },
+              "configurations": {
+                "production": {
+                  "devServerTarget": "snippeter:serve:production"
+                }
+              }
+            },
+            "lint": {
+              "builder": "@angular-devkit/build-angular:tslint",
+              "options": {
+                "tsConfig": [
+                  "apps/snippeter-e2e/tsconfig.e2e.json"
+                ],
+                "exclude": [
+                  "**/node_modules/**",
+                  "!apps/snippeter-e2e/**"
+                ]
+              }
+            }
+          },
+          "tags": [],
+          "files": [
+            {
+              "file": "apps/snippeter-e2e/cypress.json",
+              "ext": ".json",
+              "mtime": 1585867208087.8704
+            },
+            {
+              "file": "apps/snippeter-e2e/src/fixtures/example.json",
+              "ext": ".json",
+              "mtime": 1585867208090.76
+            },
+            {
+              "file": "apps/snippeter-e2e/src/integration/app.spec.ts",
+              "ext": ".ts",
+              "mtime": 1585867208090.76
+            },
+            {
+              "file": "apps/snippeter-e2e/src/plugins/index.js",
+              "ext": ".js",
+              "mtime": 1585867208091.7617
+            },
+            {
+              "file": "apps/snippeter-e2e/src/support/app.po.ts",
+              "ext": ".ts",
+              "mtime": 1585867208092.7583
+            },
+            {
+              "file": "apps/snippeter-e2e/src/support/commands.ts",
+              "ext": ".ts",
+              "mtime": 1585867208093.8076
+            },
+            {
+              "file": "apps/snippeter-e2e/src/support/index.ts",
+              "ext": ".ts",
+              "mtime": 1585867208093.8076
+            },
+            {
+              "file": "apps/snippeter-e2e/tsconfig.e2e.json",
+              "ext": ".json",
+              "mtime": 1585867208088.319
+            },
+            {
+              "file": "apps/snippeter-e2e/tsconfig.json",
+              "ext": ".json",
+              "mtime": 1585867208088.9229
+            },
+            {
+              "file": "apps/snippeter-e2e/tslint.json",
+              "ext": ".json",
+              "mtime": 1585867208086.3706
+            }
+          ]
+        }
+      },
+      "snippeter": {
+        "name": "snippeter",
+        "type": "app",
+        "data": {
+          "projectType": "application",
+          "schematics": {
+            "@nrwl/angular:component": {
+              "style": "scss"
+            }
+          },
+          "root": "apps/snippeter",
+          "sourceRoot": "apps/snippeter/src",
+          "prefix": "snippeter",
+          "architect": {
+            "build": {
+              "builder": "@angular-devkit/build-angular:browser",
+              "options": {
+                "outputPath": "dist/apps/snippeter",
+                "index": "apps/snippeter/src/index.html",
+                "main": "apps/snippeter/src/main.ts",
+                "polyfills": "apps/snippeter/src/polyfills.ts",
+                "tsConfig": "apps/snippeter/tsconfig.app.json",
+                "aot": true,
+                "assets": [
+                  "apps/snippeter/src/favicon.ico",
+                  "apps/snippeter/src/assets"
+                ],
+                "styles": [
+                  "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
+                  "apps/snippeter/src/styles.scss"
+                ],
+                "scripts": []
+              },
+              "configurations": {
+                "production": {
+                  "fileReplacements": [
+                    {
+                      "replace": "apps/snippeter/src/environments/environment.ts",
+                      "with": "apps/snippeter/src/environments/environment.prod.ts"
+                    }
+                  ],
+                  "optimization": true,
+                  "outputHashing": "all",
+                  "sourceMap": false,
+                  "extractCss": true,
+                  "namedChunks": false,
+                  "extractLicenses": true,
+                  "vendorChunk": false,
+                  "buildOptimizer": true,
+                  "budgets": [
+                    {
+                      "type": "initial",
+                      "maximumWarning": "2mb",
+                      "maximumError": "5mb"
+                    },
+                    {
+                      "type": "anyComponentStyle",
+                      "maximumWarning": "6kb",
+                      "maximumError": "10kb"
+                    }
+                  ]
+                }
+              }
+            },
+            "serve": {
+              "builder": "@angular-devkit/build-angular:dev-server",
+              "options": {
+                "browserTarget": "snippeter:build",
+                "proxyConfig": "apps/snippeter/proxy.conf.json"
+              },
+              "configurations": {
+                "production": {
+                  "browserTarget": "snippeter:build:production"
+                }
+              }
+            },
+            "extract-i18n": {
+              "builder": "@angular-devkit/build-angular:extract-i18n",
+              "options": {
+                "browserTarget": "snippeter:build"
+              }
+            },
+            "lint": {
+              "builder": "@angular-devkit/build-angular:tslint",
+              "options": {
+                "tsConfig": [
+                  "apps/snippeter/tsconfig.app.json",
+                  "apps/snippeter/tsconfig.spec.json"
+                ],
+                "exclude": [
+                  "**/node_modules/**",
+                  "!apps/snippeter/**"
+                ]
+              }
+            },
+            "test": {
+              "builder": "@nrwl/jest:jest",
+              "options": {
+                "jestConfig": "apps/snippeter/jest.config.js",
+                "tsConfig": "apps/snippeter/tsconfig.spec.json",
+                "passWithNoTests": true,
+                "setupFile": "apps/snippeter/src/test-setup.ts"
+              }
+            }
+          },
+          "tags": [],
+          "files": [
+            {
+              "file": "apps/snippeter/browserslist",
+              "ext": "",
+              "mtime": 1585867208059.826
+            },
+            {
+              "file": "apps/snippeter/jest.config.js",
+              "ext": ".js",
+              "mtime": 1585867208082.7522
+            },
+            {
+              "file": "apps/snippeter/proxy.conf.json",
+              "ext": ".json",
+              "mtime": 1585867208101.6992
+            },
+            {
+              "file": "apps/snippeter/src/app/app-routing.module.ts",
+              "ext": ".ts",
+              "mtime": 1586368737786.9963
+            },
+            {
+              "file": "apps/snippeter/src/app/app.component.html",
+              "ext": ".html",
+              "mtime": 1586368737788.9912
+            },
+            {
+              "file": "apps/snippeter/src/app/app.component.scss",
+              "ext": ".scss",
+              "mtime": 1586368737790.9856
+            },
+            {
+              "file": "apps/snippeter/src/app/app.component.spec.ts",
+              "ext": ".ts",
+              "mtime": 1585867208081.7554
+            },
+            {
+              "file": "apps/snippeter/src/app/app.component.ts",
+              "ext": ".ts",
+              "mtime": 1586368737791.9832
+            },
+            {
+              "file": "apps/snippeter/src/app/app.module.ts",
+              "ext": ".ts",
+              "mtime": 1586784113675.9175
+            },
+            {
+              "file": "apps/snippeter/src/app/authentication-modals/login/login.component.html",
+              "ext": ".html",
+              "mtime": 1586368737794.9753
+            },
+            {
+              "file": "apps/snippeter/src/app/authentication-modals/login/login.component.scss",
+              "ext": ".scss",
+              "mtime": 1586368737795.973
+            },
+            {
+              "file": "apps/snippeter/src/app/authentication-modals/login/login.component.spec.ts",
+              "ext": ".ts",
+              "mtime": 1586368737797.9673
+            },
+            {
+              "file": "apps/snippeter/src/app/authentication-modals/login/login.component.ts",
+              "ext": ".ts",
+              "mtime": 1586368737798.9646
+            },
+            {
+              "file": "apps/snippeter/src/app/authentication-modals/register/register.component.html",
+              "ext": ".html",
+              "mtime": 1586368737800.9595
+            },
+            {
+              "file": "apps/snippeter/src/app/authentication-modals/register/register.component.scss",
+              "ext": ".scss",
+              "mtime": 1586368737801.9565
+            },
+            {
+              "file": "apps/snippeter/src/app/authentication-modals/register/register.component.spec.ts",
+              "ext": ".ts",
+              "mtime": 1586368737802.9534
+            },
+            {
+              "file": "apps/snippeter/src/app/authentication-modals/register/register.component.ts",
+              "ext": ".ts",
+              "mtime": 1586368737803.9514
+            },
+            {
+              "file": "apps/snippeter/src/app/generator/components/body/body.component.html",
+              "ext": ".html",
+              "mtime": 1587404047755.2898
+            },
+            {
+              "file": "apps/snippeter/src/app/generator/components/body/body.component.scss",
+              "ext": ".scss",
+              "mtime": 1586368737804.9482
+            },
+            {
+              "file": "apps/snippeter/src/app/generator/components/body/body.component.spec.ts",
+              "ext": ".ts",
+              "mtime": 1586368737805.9456
+            },
+            {
+              "file": "apps/snippeter/src/app/generator/components/body/body.component.ts",
+              "ext": ".ts",
+              "mtime": 1591391788162.1091
+            },
+            {
+              "file": "apps/snippeter/src/app/generator/components/construct-selectors/construct-selectors.component.html",
+              "ext": ".html",
+              "mtime": 1586368737970.506
+            },
+            {
+              "file": "apps/snippeter/src/app/generator/components/construct-selectors/construct-selectors.component.scss",
+              "ext": ".scss",
+              "mtime": 1586368737971.5037
+            },
+            {
+              "file": "apps/snippeter/src/app/generator/components/construct-selectors/construct-selectors.component.spec.ts",
+              "ext": ".ts",
+              "mtime": 1586368737988.459
+            },
+            {
+              "file": "apps/snippeter/src/app/generator/components/construct-selectors/construct-selectors.component.ts",
+              "ext": ".ts",
+              "mtime": 1586368737989.4568
+            },
+            {
+              "file": "apps/snippeter/src/app/generator/components/constructs/constructs.component.html",
+              "ext": ".html",
+              "mtime": 1591391788163.0723
+            },
+            {
+              "file": "apps/snippeter/src/app/generator/components/constructs/constructs.component.scss",
+              "ext": ".scss",
+              "mtime": 1586368737992.447
+            },
+            {
+              "file": "apps/snippeter/src/app/generator/components/constructs/constructs.component.spec.ts",
+              "ext": ".ts",
+              "mtime": 1586368737994.4424
+            },
+            {
+              "file": "apps/snippeter/src/app/generator/components/constructs/constructs.component.ts",
+              "ext": ".ts",
+              "mtime": 1591391788164.0803
+            },
+            {
+              "file": "apps/snippeter/src/app/generator/components/copy-snippet/copy-snippet.component.html",
+              "ext": ".html",
+              "mtime": 1586368737999.43
+            },
+            {
+              "file": "apps/snippeter/src/app/generator/components/copy-snippet/copy-snippet.component.scss",
+              "ext": ".scss",
+              "mtime": 1586368738000.4258
+            },
+            {
+              "file": "apps/snippeter/src/app/generator/components/copy-snippet/copy-snippet.component.spec.ts",
+              "ext": ".ts",
+              "mtime": 1586368738073.2312
+            },
+            {
+              "file": "apps/snippeter/src/app/generator/components/copy-snippet/copy-snippet.component.ts",
+              "ext": ".ts",
+              "mtime": 1586368738135.0667
+            },
+            {
+              "file": "apps/snippeter/src/app/generator/components/description/description.component.html",
+              "ext": ".html",
+              "mtime": 1587404162697.6729
+            },
+            {
+              "file": "apps/snippeter/src/app/generator/components/description/description.component.scss",
+              "ext": ".scss",
+              "mtime": 1586368738137.0603
+            },
+            {
+              "file": "apps/snippeter/src/app/generator/components/description/description.component.spec.ts",
+              "ext": ".ts",
+              "mtime": 1586368738152.022
+            },
+            {
+              "file": "apps/snippeter/src/app/generator/components/description/description.component.ts",
+              "ext": ".ts",
+              "mtime": 1586368738154.0154
+            },
+            {
+              "file": "apps/snippeter/src/app/generator/components/name/name.component.html",
+              "ext": ".html",
+              "mtime": 1591391788164.0803
+            },
+            {
+              "file": "apps/snippeter/src/app/generator/components/name/name.component.scss",
+              "ext": ".scss",
+              "mtime": 1586368738156.0103
+            },
+            {
+              "file": "apps/snippeter/src/app/generator/components/name/name.component.spec.ts",
+              "ext": ".ts",
+              "mtime": 1586368738157.007
+            },
+            {
+              "file": "apps/snippeter/src/app/generator/components/name/name.component.ts",
+              "ext": ".ts",
+              "mtime": 1586368738159.0017
+            },
+            {
+              "file": "apps/snippeter/src/app/generator/components/prefix/prefix.component.html",
+              "ext": ".html",
+              "mtime": 1591391788165.0686
+            },
+            {
+              "file": "apps/snippeter/src/app/generator/components/prefix/prefix.component.scss",
+              "ext": ".scss",
+              "mtime": 1586368738160.9963
+            },
+            {
+              "file": "apps/snippeter/src/app/generator/components/prefix/prefix.component.spec.ts",
+              "ext": ".ts",
+              "mtime": 1586368738162.9917
+            },
+            {
+              "file": "apps/snippeter/src/app/generator/components/prefix/prefix.component.ts",
+              "ext": ".ts",
+              "mtime": 1586368738185.9292
+            },
+            {
+              "file": "apps/snippeter/src/app/generator/components/toolbar/download/download-modal/download-modal.component.html",
+              "ext": ".html",
+              "mtime": 1586368738195.9023
+            },
+            {
+              "file": "apps/snippeter/src/app/generator/components/toolbar/download/download-modal/download-modal.component.scss",
+              "ext": ".scss",
+              "mtime": 1586368738639.7163
+            },
+            {
+              "file": "apps/snippeter/src/app/generator/components/toolbar/download/download-modal/download-modal.component.spec.ts",
+              "ext": ".ts",
+              "mtime": 1586368738641.7112
+            },
+            {
+              "file": "apps/snippeter/src/app/generator/components/toolbar/download/download-modal/download-modal.component.ts",
+              "ext": ".ts",
+              "mtime": 1586368739270.031
+            },
+            {
+              "file": "apps/snippeter/src/app/generator/components/toolbar/download/download.component.html",
+              "ext": ".html",
+              "mtime": 1586368739272.0266
+            },
+            {
+              "file": "apps/snippeter/src/app/generator/components/toolbar/download/download.component.scss",
+              "ext": ".scss",
+              "mtime": 1586368739413.6472
+            },
+            {
+              "file": "apps/snippeter/src/app/generator/components/toolbar/download/download.component.spec.ts",
+              "ext": ".ts",
+              "mtime": 1586368739414.6445
+            },
+            {
+              "file": "apps/snippeter/src/app/generator/components/toolbar/download/download.component.ts",
+              "ext": ".ts",
+              "mtime": 1586368739415.6416
+            },
+            {
+              "file": "apps/snippeter/src/app/generator/components/toolbar/upload/upload.component.html",
+              "ext": ".html",
+              "mtime": 1586368739416.6392
+            },
+            {
+              "file": "apps/snippeter/src/app/generator/components/toolbar/upload/upload.component.scss",
+              "ext": ".scss",
+              "mtime": 1586368739417.6367
+            },
+            {
+              "file": "apps/snippeter/src/app/generator/components/toolbar/upload/upload.component.spec.ts",
+              "ext": ".ts",
+              "mtime": 1586368739418.6338
+            },
+            {
+              "file": "apps/snippeter/src/app/generator/components/toolbar/upload/upload.component.ts",
+              "ext": ".ts",
+              "mtime": 1586368739419.6316
+            },
+            {
+              "file": "apps/snippeter/src/app/generator/generator-routing.module.ts",
+              "ext": ".ts",
+              "mtime": 1586368739420.6294
+            },
+            {
+              "file": "apps/snippeter/src/app/generator/generator.component.html",
+              "ext": ".html",
+              "mtime": 1591391788165.0686
+            },
+            {
+              "file": "apps/snippeter/src/app/generator/generator.component.scss",
+              "ext": ".scss",
+              "mtime": 1586368739422.6228
+            },
+            {
+              "file": "apps/snippeter/src/app/generator/generator.component.spec.ts",
+              "ext": ".ts",
+              "mtime": 1586368739424.6187
+            },
+            {
+              "file": "apps/snippeter/src/app/generator/generator.component.ts",
+              "ext": ".ts",
+              "mtime": 1591391788166.1052
+            },
+            {
+              "file": "apps/snippeter/src/app/generator/generator.module.ts",
+              "ext": ".ts",
+              "mtime": 1591391788167.1055
+            },
+            {
+              "file": "apps/snippeter/src/app/generator/services/download-snippet/download-snippet.service.spec.ts",
+              "ext": ".ts",
+              "mtime": 1586368739434.5918
+            },
+            {
+              "file": "apps/snippeter/src/app/generator/services/download-snippet/download-snippet.service.ts",
+              "ext": ".ts",
+              "mtime": 1586368739435.5886
+            },
+            {
+              "file": "apps/snippeter/src/app/generator/services/upload-snippet/upload-snippet.service.spec.ts",
+              "ext": ".ts",
+              "mtime": 1586368739436.5862
+            },
+            {
+              "file": "apps/snippeter/src/app/generator/services/upload-snippet/upload-snippet.service.ts",
+              "ext": ".ts",
+              "mtime": 1586368739646.0266
+            },
+            {
+              "file": "apps/snippeter/src/app/material.module.ts",
+              "ext": ".ts",
+              "mtime": 1587403309803.4807
+            },
+            {
+              "file": "apps/snippeter/src/app/navbar/navbar.component.html",
+              "ext": ".html",
+              "mtime": 1586368739650.017
+            },
+            {
+              "file": "apps/snippeter/src/app/navbar/navbar.component.scss",
+              "ext": ".scss",
+              "mtime": 1586368739651.0127
+            },
+            {
+              "file": "apps/snippeter/src/app/navbar/navbar.component.spec.ts",
+              "ext": ".ts",
+              "mtime": 1586368739652.011
+            },
+            {
+              "file": "apps/snippeter/src/app/navbar/navbar.component.ts",
+              "ext": ".ts",
+              "mtime": 1586368739654.005
+            },
+            {
+              "file": "apps/snippeter/src/assets/.gitkeep",
+              "ext": "",
+              "mtime": 1585867208076.3928
+            },
+            {
+              "file": "apps/snippeter/src/environments/environment.prod.ts",
+              "ext": ".ts",
+              "mtime": 1585867208077.7632
+            },
+            {
+              "file": "apps/snippeter/src/environments/environment.ts",
+              "ext": ".ts",
+              "mtime": 1585867208078.7632
+            },
+            {
+              "file": "apps/snippeter/src/favicon.ico",
+              "ext": ".ico",
+              "mtime": 1585867208059.826
+            },
+            {
+              "file": "apps/snippeter/src/index.html",
+              "ext": ".html",
+              "mtime": 1586368739655.0027
+            },
+            {
+              "file": "apps/snippeter/src/main.ts",
+              "ext": ".ts",
+              "mtime": 1585867208061.822
+            },
+            {
+              "file": "apps/snippeter/src/polyfills.ts",
+              "ext": ".ts",
+              "mtime": 1585867208061.822
+            },
+            {
+              "file": "apps/snippeter/src/styles.scss",
+              "ext": ".scss",
+              "mtime": 1586368739656.9973
+            },
+            {
+              "file": "apps/snippeter/src/test-setup.ts",
+              "ext": ".ts",
+              "mtime": 1585867208085.7793
+            },
+            {
+              "file": "apps/snippeter/tsconfig.app.json",
+              "ext": ".json",
+              "mtime": 1585867208059.826
+            },
+            {
+              "file": "apps/snippeter/tsconfig.json",
+              "ext": ".json",
+              "mtime": 1585867208058.8289
+            },
+            {
+              "file": "apps/snippeter/tsconfig.spec.json",
+              "ext": ".json",
+              "mtime": 1585867208085.3247
+            },
+            {
+              "file": "apps/snippeter/tslint.json",
+              "ext": ".json",
+              "mtime": 1585867208060.8232
+            }
+          ]
+        }
+      },
+      "api": {
+        "name": "api",
+        "type": "app",
+        "data": {
+          "root": "apps/api",
+          "sourceRoot": "apps/api/src",
+          "projectType": "application",
+          "prefix": "api",
+          "schematics": {},
+          "architect": {
+            "build": {
+              "builder": "@nrwl/node:build",
+              "options": {
+                "outputPath": "dist/apps/api",
+                "main": "apps/api/src/main.ts",
+                "tsConfig": "apps/api/tsconfig.app.json",
+                "assets": [
+                  "apps/api/src/assets"
+                ]
+              },
+              "configurations": {
+                "production": {
+                  "optimization": true,
+                  "extractLicenses": true,
+                  "inspect": false,
+                  "fileReplacements": [
+                    {
+                      "replace": "apps/api/src/environments/environment.ts",
+                      "with": "apps/api/src/environments/environment.prod.ts"
+                    }
+                  ]
+                }
+              }
+            },
+            "serve": {
+              "builder": "@nrwl/node:execute",
+              "options": {
+                "buildTarget": "api:build"
+              }
+            },
+            "lint": {
+              "builder": "@angular-devkit/build-angular:tslint",
+              "options": {
+                "tsConfig": [
+                  "apps/api/tsconfig.app.json",
+                  "apps/api/tsconfig.spec.json"
+                ],
+                "exclude": [
+                  "**/node_modules/**",
+                  "!apps/api/**"
+                ]
+              }
+            },
+            "test": {
+              "builder": "@nrwl/jest:jest",
+              "options": {
+                "jestConfig": "apps/api/jest.config.js",
+                "tsConfig": "apps/api/tsconfig.spec.json",
+                "passWithNoTests": true
+              }
+            }
+          },
+          "tags": [],
+          "files": [
+            {
+              "file": "apps/api/jest.config.js",
+              "ext": ".js",
+              "mtime": 1585867208100.3735
+            },
+            {
+              "file": "apps/api/src/app/.gitkeep",
+              "ext": "",
+              "mtime": 1585867208098.25
+            },
+            {
+              "file": "apps/api/src/app/app.controller.spec.ts",
+              "ext": ".ts",
+              "mtime": 1585867208102.1257
+            },
+            {
+              "file": "apps/api/src/app/app.controller.ts",
+              "ext": ".ts",
+              "mtime": 1586368737756.0784
+            },
+            {
+              "file": "apps/api/src/app/app.module.ts",
+              "ext": ".ts",
+              "mtime": 1591394547422.321
+            },
+            {
+              "file": "apps/api/src/app/app.service.spec.ts",
+              "ext": ".ts",
+              "mtime": 1586368737760.0676
+            },
+            {
+              "file": "apps/api/src/app/app.service.ts",
+              "ext": ".ts",
+              "mtime": 1586368737761.0654
+            },
+            {
+              "file": "apps/api/src/app/snippet/snippet.controller.spec.ts",
+              "ext": ".ts",
+              "mtime": 1586368737762.0627
+            },
+            {
+              "file": "apps/api/src/app/snippet/snippet.controller.ts",
+              "ext": ".ts",
+              "mtime": 1586368737780.0151
+            },
+            {
+              "file": "apps/api/src/app/snippet/snippet.module.ts",
+              "ext": ".ts",
+              "mtime": 1586368737782.0095
+            },
+            {
+              "file": "apps/api/src/app/snippet/snippet.schema.ts",
+              "ext": ".ts",
+              "mtime": 1586368737784.0046
+            },
+            {
+              "file": "apps/api/src/app/snippet/snippet.service.ts",
+              "ext": ".ts",
+              "mtime": 1591391788162.1091
+            },
+            {
+              "file": "apps/api/src/assets/.gitkeep",
+              "ext": "",
+              "mtime": 1585867208098.25
+            },
+            {
+              "file": "apps/api/src/environments/environment.prod.ts",
+              "ext": ".ts",
+              "mtime": 1585867208099.372
+            },
+            {
+              "file": "apps/api/src/environments/environment.ts",
+              "ext": ".ts",
+              "mtime": 1585867208099.372
+            },
+            {
+              "file": "apps/api/src/main.ts",
+              "ext": ".ts",
+              "mtime": 1591394665771.9607
+            },
+            {
+              "file": "apps/api/tsconfig.app.json",
+              "ext": ".json",
+              "mtime": 1585867208096.2505
+            },
+            {
+              "file": "apps/api/tsconfig.json",
+              "ext": ".json",
+              "mtime": 1585867208096.2505
+            },
+            {
+              "file": "apps/api/tsconfig.spec.json",
+              "ext": ".json",
+              "mtime": 1585867208101.3892
+            },
+            {
+              "file": "apps/api/tslint.json",
+              "ext": ".json",
+              "mtime": 1585867208094.9827
+            }
+          ]
+        }
+      },
+      "@angular/animations": {
+        "type": "npm",
+        "name": "@angular/animations",
+        "data": {
+          "version": "9.1.0",
+          "files": []
+        }
+      },
+      "@angular/cdk": {
+        "type": "npm",
+        "name": "@angular/cdk",
+        "data": {
+          "version": "~9.2.0-next.0",
+          "files": []
+        }
+      },
+      "@angular/common": {
+        "type": "npm",
+        "name": "@angular/common",
+        "data": {
+          "version": "9.1.0",
+          "files": []
+        }
+      },
+      "@angular/compiler": {
+        "type": "npm",
+        "name": "@angular/compiler",
+        "data": {
+          "version": "9.1.0",
+          "files": []
+        }
+      },
+      "@angular/core": {
+        "type": "npm",
+        "name": "@angular/core",
+        "data": {
+          "version": "9.1.0",
+          "files": []
+        }
+      },
+      "@angular/forms": {
+        "type": "npm",
+        "name": "@angular/forms",
+        "data": {
+          "version": "9.1.0",
+          "files": []
+        }
+      },
+      "@angular/material": {
+        "type": "npm",
+        "name": "@angular/material",
+        "data": {
+          "version": "~9.2.0-next.0",
+          "files": []
+        }
+      },
+      "@angular/platform-browser": {
+        "type": "npm",
+        "name": "@angular/platform-browser",
+        "data": {
+          "version": "9.1.0",
+          "files": []
+        }
+      },
+      "@angular/platform-browser-dynamic": {
+        "type": "npm",
+        "name": "@angular/platform-browser-dynamic",
+        "data": {
+          "version": "9.1.0",
+          "files": []
+        }
+      },
+      "@angular/router": {
+        "type": "npm",
+        "name": "@angular/router",
+        "data": {
+          "version": "9.1.0",
+          "files": []
+        }
+      },
+      "@nestjs/common": {
+        "type": "npm",
+        "name": "@nestjs/common",
+        "data": {
+          "version": "^6.8.3",
+          "files": []
+        }
+      },
+      "@nestjs/core": {
+        "type": "npm",
+        "name": "@nestjs/core",
+        "data": {
+          "version": "^6.8.3",
+          "files": []
+        }
+      },
+      "@nestjs/mongoose": {
+        "type": "npm",
+        "name": "@nestjs/mongoose",
+        "data": {
+          "version": "^6.4.0",
+          "files": []
+        }
+      },
+      "@nestjs/platform-express": {
+        "type": "npm",
+        "name": "@nestjs/platform-express",
+        "data": {
+          "version": "^6.8.3",
+          "files": []
+        }
+      },
+      "@nestjs/serve-static": {
+        "type": "npm",
+        "name": "@nestjs/serve-static",
+        "data": {
+          "version": "^2.1.1",
+          "files": []
+        }
+      },
+      "@nrwl/angular": {
+        "type": "npm",
+        "name": "@nrwl/angular",
+        "data": {
+          "version": "9.2.1",
+          "files": []
+        }
+      },
+      "core-js": {
+        "type": "npm",
+        "name": "core-js",
+        "data": {
+          "version": "^2.5.4",
+          "files": []
+        }
+      },
+      "mongoose": {
+        "type": "npm",
+        "name": "mongoose",
+        "data": {
+          "version": "^5.9.7",
+          "files": []
+        }
+      },
+      "ngx-clipboard": {
+        "type": "npm",
+        "name": "ngx-clipboard",
+        "data": {
+          "version": "^13.0.0",
+          "files": []
+        }
+      },
+      "reflect-metadata": {
+        "type": "npm",
+        "name": "reflect-metadata",
+        "data": {
+          "version": "^0.1.13",
+          "files": []
+        }
+      },
+      "rxjs": {
+        "type": "npm",
+        "name": "rxjs",
+        "data": {
+          "version": "~6.5.4",
+          "files": []
+        }
+      },
+      "zone.js": {
+        "type": "npm",
+        "name": "zone.js",
+        "data": {
+          "version": "^0.10.2",
+          "files": []
+        }
+      },
+      "@angular-devkit/build-angular": {
+        "type": "npm",
+        "name": "@angular-devkit/build-angular",
+        "data": {
+          "version": "0.901.0",
+          "files": []
+        }
+      },
+      "@angular/cli": {
+        "type": "npm",
+        "name": "@angular/cli",
+        "data": {
+          "version": "9.1.0",
+          "files": []
+        }
+      },
+      "@angular/compiler-cli": {
+        "type": "npm",
+        "name": "@angular/compiler-cli",
+        "data": {
+          "version": "9.1.0",
+          "files": []
+        }
+      },
+      "@angular/language-service": {
+        "type": "npm",
+        "name": "@angular/language-service",
+        "data": {
+          "version": "9.1.0",
+          "files": []
+        }
+      },
+      "@nestjs/schematics": {
+        "type": "npm",
+        "name": "@nestjs/schematics",
+        "data": {
+          "version": "^6.7.0",
+          "files": []
+        }
+      },
+      "@nestjs/testing": {
+        "type": "npm",
+        "name": "@nestjs/testing",
+        "data": {
+          "version": "^6.8.3",
+          "files": []
+        }
+      },
+      "@nrwl/cypress": {
+        "type": "npm",
+        "name": "@nrwl/cypress",
+        "data": {
+          "version": "9.2.1",
+          "files": []
+        }
+      },
+      "@nrwl/jest": {
+        "type": "npm",
+        "name": "@nrwl/jest",
+        "data": {
+          "version": "9.2.1",
+          "files": []
+        }
+      },
+      "@nrwl/nest": {
+        "type": "npm",
+        "name": "@nrwl/nest",
+        "data": {
+          "version": "9.2.1",
+          "files": []
+        }
+      },
+      "@nrwl/node": {
+        "type": "npm",
+        "name": "@nrwl/node",
+        "data": {
+          "version": "9.2.1",
+          "files": []
+        }
+      },
+      "@nrwl/workspace": {
+        "type": "npm",
+        "name": "@nrwl/workspace",
+        "data": {
+          "version": "9.2.1",
+          "files": []
+        }
+      },
+      "@types/jest": {
+        "type": "npm",
+        "name": "@types/jest",
+        "data": {
+          "version": "25.1.4",
+          "files": []
+        }
+      },
+      "@types/mongoose": {
+        "type": "npm",
+        "name": "@types/mongoose",
+        "data": {
+          "version": "^5.7.8",
+          "files": []
+        }
+      },
+      "@types/node": {
+        "type": "npm",
+        "name": "@types/node",
+        "data": {
+          "version": "~8.9.4",
+          "files": []
+        }
+      },
+      "codelyzer": {
+        "type": "npm",
+        "name": "codelyzer",
+        "data": {
+          "version": "~5.0.1",
+          "files": []
+        }
+      },
+      "cypress": {
+        "type": "npm",
+        "name": "cypress",
+        "data": {
+          "version": "^4.1.0",
+          "files": []
+        }
+      },
+      "dotenv": {
+        "type": "npm",
+        "name": "dotenv",
+        "data": {
+          "version": "6.2.0",
+          "files": []
+        }
+      },
+      "eslint": {
+        "type": "npm",
+        "name": "eslint",
+        "data": {
+          "version": "6.8.0",
+          "files": []
+        }
+      },
+      "jest": {
+        "type": "npm",
+        "name": "jest",
+        "data": {
+          "version": "25.2.3",
+          "files": []
+        }
+      },
+      "jest-preset-angular": {
+        "type": "npm",
+        "name": "jest-preset-angular",
+        "data": {
+          "version": "8.1.2",
+          "files": []
+        }
+      },
+      "prettier": {
+        "type": "npm",
+        "name": "prettier",
+        "data": {
+          "version": "1.19.1",
+          "files": []
+        }
+      },
+      "ts-jest": {
+        "type": "npm",
+        "name": "ts-jest",
+        "data": {
+          "version": "25.2.1",
+          "files": []
+        }
+      },
+      "ts-node": {
+        "type": "npm",
+        "name": "ts-node",
+        "data": {
+          "version": "~7.0.0",
+          "files": []
+        }
+      },
+      "tslint": {
+        "type": "npm",
+        "name": "tslint",
+        "data": {
+          "version": "~6.0.0",
+          "files": []
+        }
+      },
+      "typescript": {
+        "type": "npm",
+        "name": "typescript",
+        "data": {
+          "version": "~3.8.3",
+          "files": []
+        }
+      }
+    },
+    "dependencies": {
+      "api-interfaces": [],
+      "snippeter-e2e": [
+        {
+          "type": "implicit",
+          "source": "snippeter-e2e",
+          "target": "snippeter"
+        }
+      ],
+      "snippeter": [
+        {
+          "type": "static",
+          "source": "snippeter",
+          "target": "api-interfaces"
+        },
+        {
+          "type": "static",
+          "source": "snippeter",
+          "target": "@angular/router"
+        },
+        {
+          "type": "static",
+          "source": "snippeter",
+          "target": "@angular/core"
+        },
+        {
+          "type": "static",
+          "source": "snippeter",
+          "target": "@angular/common"
+        },
+        {
+          "type": "static",
+          "source": "snippeter",
+          "target": "@angular/platform-browser"
+        },
+        {
+          "type": "static",
+          "source": "snippeter",
+          "target": "@angular/material"
+        },
+        {
+          "type": "static",
+          "source": "snippeter",
+          "target": "@angular/forms"
+        },
+        {
+          "type": "static",
+          "source": "snippeter",
+          "target": "@angular/cdk"
+        },
+        {
+          "type": "static",
+          "source": "snippeter",
+          "target": "ngx-clipboard"
+        },
+        {
+          "type": "static",
+          "source": "snippeter",
+          "target": "rxjs"
+        },
+        {
+          "type": "static",
+          "source": "snippeter",
+          "target": "@angular/platform-browser-dynamic"
+        },
+        {
+          "type": "static",
+          "source": "snippeter",
+          "target": "zone.js"
+        },
+        {
+          "type": "static",
+          "source": "snippeter",
+          "target": "jest-preset-angular"
+        }
+      ],
+      "api": [
+        {
+          "type": "static",
+          "source": "api",
+          "target": "api-interfaces"
+        },
+        {
+          "type": "static",
+          "source": "api",
+          "target": "@nestjs/testing"
+        },
+        {
+          "type": "static",
+          "source": "api",
+          "target": "@nestjs/common"
+        },
+        {
+          "type": "static",
+          "source": "api",
+          "target": "@nestjs/mongoose"
+        },
+        {
+          "type": "static",
+          "source": "api",
+          "target": "@nestjs/serve-static"
+        },
+        {
+          "type": "static",
+          "source": "api",
+          "target": "mongoose"
+        },
+        {
+          "type": "static",
+          "source": "api",
+          "target": "@nestjs/core"
+        }
+      ],
+      "@angular/animations": [],
+      "@angular/cdk": [],
+      "@angular/common": [],
+      "@angular/compiler": [],
+      "@angular/core": [],
+      "@angular/forms": [],
+      "@angular/material": [],
+      "@angular/platform-browser": [],
+      "@angular/platform-browser-dynamic": [],
+      "@angular/router": [],
+      "@nestjs/common": [],
+      "@nestjs/core": [],
+      "@nestjs/mongoose": [],
+      "@nestjs/platform-express": [],
+      "@nestjs/serve-static": [],
+      "@nrwl/angular": [],
+      "core-js": [],
+      "mongoose": [],
+      "ngx-clipboard": [],
+      "reflect-metadata": [],
+      "rxjs": [],
+      "zone.js": [],
+      "@angular-devkit/build-angular": [],
+      "@angular/cli": [],
+      "@angular/compiler-cli": [],
+      "@angular/language-service": [],
+      "@nestjs/schematics": [],
+      "@nestjs/testing": [],
+      "@nrwl/cypress": [],
+      "@nrwl/jest": [],
+      "@nrwl/nest": [],
+      "@nrwl/node": [],
+      "@nrwl/workspace": [],
+      "@types/jest": [],
+      "@types/mongoose": [],
+      "@types/node": [],
+      "codelyzer": [],
+      "cypress": [],
+      "dotenv": [],
+      "eslint": [],
+      "jest": [],
+      "jest-preset-angular": [],
+      "prettier": [],
+      "ts-jest": [],
+      "ts-node": [],
+      "tslint": [],
+      "typescript": []
+    }
+  },
+  "fileMap": {
+    "api-interfaces": [
+      {
+        "file": "libs/api-interfaces/jest.config.js",
+        "ext": ".js",
+        "mtime": 1585867208109.3005
+      },
+      {
+        "file": "libs/api-interfaces/README.md",
+        "ext": ".md",
+        "mtime": 1585867208106.4998
+      },
+      {
+        "file": "libs/api-interfaces/src/index.ts",
+        "ext": ".ts",
+        "mtime": 1586368739691.9028
+      },
+      {
+        "file": "libs/api-interfaces/src/lib/choice.ts",
+        "ext": ".ts",
+        "mtime": 1591391788167.1055
+      },
+      {
+        "file": "libs/api-interfaces/src/lib/dto/create-snippet.dto.ts",
+        "ext": ".ts",
+        "mtime": 1586370588524.424
+      },
+      {
+        "file": "libs/api-interfaces/src/lib/dto/update-snippet.dto.ts",
+        "ext": ".ts",
+        "mtime": 1586370588525.4216
+      },
+      {
+        "file": "libs/api-interfaces/src/lib/placeholder.ts",
+        "ext": ".ts",
+        "mtime": 1586370588526.419
+      },
+      {
+        "file": "libs/api-interfaces/src/lib/snippet-config.ts",
+        "ext": ".ts",
+        "mtime": 1586370588527.417
+      },
+      {
+        "file": "libs/api-interfaces/src/lib/snippet.ts",
+        "ext": ".ts",
+        "mtime": 1586370588528.4128
+      },
+      {
+        "file": "libs/api-interfaces/src/lib/tabstop.ts",
+        "ext": ".ts",
+        "mtime": 1586370588529.4126
+      },
+      {
+        "file": "libs/api-interfaces/tsconfig.json",
+        "ext": ".json",
+        "mtime": 1585867208106.9194
+      },
+      {
+        "file": "libs/api-interfaces/tsconfig.lib.json",
+        "ext": ".json",
+        "mtime": 1585867208106.9194
+      },
+      {
+        "file": "libs/api-interfaces/tsconfig.spec.json",
+        "ext": ".json",
+        "mtime": 1585867208110.2983
+      },
+      {
+        "file": "libs/api-interfaces/tslint.json",
+        "ext": ".json",
+        "mtime": 1585867208105.5542
+      }
+    ],
+    "snippeter-e2e": [
+      {
+        "file": "apps/snippeter-e2e/cypress.json",
+        "ext": ".json",
+        "mtime": 1585867208087.8704
+      },
+      {
+        "file": "apps/snippeter-e2e/src/fixtures/example.json",
+        "ext": ".json",
+        "mtime": 1585867208090.76
+      },
+      {
+        "file": "apps/snippeter-e2e/src/integration/app.spec.ts",
+        "ext": ".ts",
+        "mtime": 1585867208090.76
+      },
+      {
+        "file": "apps/snippeter-e2e/src/plugins/index.js",
+        "ext": ".js",
+        "mtime": 1585867208091.7617
+      },
+      {
+        "file": "apps/snippeter-e2e/src/support/app.po.ts",
+        "ext": ".ts",
+        "mtime": 1585867208092.7583
+      },
+      {
+        "file": "apps/snippeter-e2e/src/support/commands.ts",
+        "ext": ".ts",
+        "mtime": 1585867208093.8076
+      },
+      {
+        "file": "apps/snippeter-e2e/src/support/index.ts",
+        "ext": ".ts",
+        "mtime": 1585867208093.8076
+      },
+      {
+        "file": "apps/snippeter-e2e/tsconfig.e2e.json",
+        "ext": ".json",
+        "mtime": 1585867208088.319
+      },
+      {
+        "file": "apps/snippeter-e2e/tsconfig.json",
+        "ext": ".json",
+        "mtime": 1585867208088.9229
+      },
+      {
+        "file": "apps/snippeter-e2e/tslint.json",
+        "ext": ".json",
+        "mtime": 1585867208086.3706
+      }
+    ],
+    "snippeter": [
+      {
+        "file": "apps/snippeter/browserslist",
+        "ext": "",
+        "mtime": 1585867208059.826
+      },
+      {
+        "file": "apps/snippeter/jest.config.js",
+        "ext": ".js",
+        "mtime": 1585867208082.7522
+      },
+      {
+        "file": "apps/snippeter/proxy.conf.json",
+        "ext": ".json",
+        "mtime": 1585867208101.6992
+      },
+      {
+        "file": "apps/snippeter/src/app/app-routing.module.ts",
+        "ext": ".ts",
+        "mtime": 1586368737786.9963
+      },
+      {
+        "file": "apps/snippeter/src/app/app.component.html",
+        "ext": ".html",
+        "mtime": 1586368737788.9912
+      },
+      {
+        "file": "apps/snippeter/src/app/app.component.scss",
+        "ext": ".scss",
+        "mtime": 1586368737790.9856
+      },
+      {
+        "file": "apps/snippeter/src/app/app.component.spec.ts",
+        "ext": ".ts",
+        "mtime": 1585867208081.7554
+      },
+      {
+        "file": "apps/snippeter/src/app/app.component.ts",
+        "ext": ".ts",
+        "mtime": 1586368737791.9832
+      },
+      {
+        "file": "apps/snippeter/src/app/app.module.ts",
+        "ext": ".ts",
+        "mtime": 1586784113675.9175
+      },
+      {
+        "file": "apps/snippeter/src/app/authentication-modals/login/login.component.html",
+        "ext": ".html",
+        "mtime": 1586368737794.9753
+      },
+      {
+        "file": "apps/snippeter/src/app/authentication-modals/login/login.component.scss",
+        "ext": ".scss",
+        "mtime": 1586368737795.973
+      },
+      {
+        "file": "apps/snippeter/src/app/authentication-modals/login/login.component.spec.ts",
+        "ext": ".ts",
+        "mtime": 1586368737797.9673
+      },
+      {
+        "file": "apps/snippeter/src/app/authentication-modals/login/login.component.ts",
+        "ext": ".ts",
+        "mtime": 1586368737798.9646
+      },
+      {
+        "file": "apps/snippeter/src/app/authentication-modals/register/register.component.html",
+        "ext": ".html",
+        "mtime": 1586368737800.9595
+      },
+      {
+        "file": "apps/snippeter/src/app/authentication-modals/register/register.component.scss",
+        "ext": ".scss",
+        "mtime": 1586368737801.9565
+      },
+      {
+        "file": "apps/snippeter/src/app/authentication-modals/register/register.component.spec.ts",
+        "ext": ".ts",
+        "mtime": 1586368737802.9534
+      },
+      {
+        "file": "apps/snippeter/src/app/authentication-modals/register/register.component.ts",
+        "ext": ".ts",
+        "mtime": 1586368737803.9514
+      },
+      {
+        "file": "apps/snippeter/src/app/generator/components/body/body.component.html",
+        "ext": ".html",
+        "mtime": 1587404047755.2898
+      },
+      {
+        "file": "apps/snippeter/src/app/generator/components/body/body.component.scss",
+        "ext": ".scss",
+        "mtime": 1586368737804.9482
+      },
+      {
+        "file": "apps/snippeter/src/app/generator/components/body/body.component.spec.ts",
+        "ext": ".ts",
+        "mtime": 1586368737805.9456
+      },
+      {
+        "file": "apps/snippeter/src/app/generator/components/body/body.component.ts",
+        "ext": ".ts",
+        "mtime": 1591391788162.1091
+      },
+      {
+        "file": "apps/snippeter/src/app/generator/components/construct-selectors/construct-selectors.component.html",
+        "ext": ".html",
+        "mtime": 1586368737970.506
+      },
+      {
+        "file": "apps/snippeter/src/app/generator/components/construct-selectors/construct-selectors.component.scss",
+        "ext": ".scss",
+        "mtime": 1586368737971.5037
+      },
+      {
+        "file": "apps/snippeter/src/app/generator/components/construct-selectors/construct-selectors.component.spec.ts",
+        "ext": ".ts",
+        "mtime": 1586368737988.459
+      },
+      {
+        "file": "apps/snippeter/src/app/generator/components/construct-selectors/construct-selectors.component.ts",
+        "ext": ".ts",
+        "mtime": 1586368737989.4568
+      },
+      {
+        "file": "apps/snippeter/src/app/generator/components/constructs/constructs.component.html",
+        "ext": ".html",
+        "mtime": 1591391788163.0723
+      },
+      {
+        "file": "apps/snippeter/src/app/generator/components/constructs/constructs.component.scss",
+        "ext": ".scss",
+        "mtime": 1586368737992.447
+      },
+      {
+        "file": "apps/snippeter/src/app/generator/components/constructs/constructs.component.spec.ts",
+        "ext": ".ts",
+        "mtime": 1586368737994.4424
+      },
+      {
+        "file": "apps/snippeter/src/app/generator/components/constructs/constructs.component.ts",
+        "ext": ".ts",
+        "mtime": 1591391788164.0803
+      },
+      {
+        "file": "apps/snippeter/src/app/generator/components/copy-snippet/copy-snippet.component.html",
+        "ext": ".html",
+        "mtime": 1586368737999.43
+      },
+      {
+        "file": "apps/snippeter/src/app/generator/components/copy-snippet/copy-snippet.component.scss",
+        "ext": ".scss",
+        "mtime": 1586368738000.4258
+      },
+      {
+        "file": "apps/snippeter/src/app/generator/components/copy-snippet/copy-snippet.component.spec.ts",
+        "ext": ".ts",
+        "mtime": 1586368738073.2312
+      },
+      {
+        "file": "apps/snippeter/src/app/generator/components/copy-snippet/copy-snippet.component.ts",
+        "ext": ".ts",
+        "mtime": 1586368738135.0667
+      },
+      {
+        "file": "apps/snippeter/src/app/generator/components/description/description.component.html",
+        "ext": ".html",
+        "mtime": 1587404162697.6729
+      },
+      {
+        "file": "apps/snippeter/src/app/generator/components/description/description.component.scss",
+        "ext": ".scss",
+        "mtime": 1586368738137.0603
+      },
+      {
+        "file": "apps/snippeter/src/app/generator/components/description/description.component.spec.ts",
+        "ext": ".ts",
+        "mtime": 1586368738152.022
+      },
+      {
+        "file": "apps/snippeter/src/app/generator/components/description/description.component.ts",
+        "ext": ".ts",
+        "mtime": 1586368738154.0154
+      },
+      {
+        "file": "apps/snippeter/src/app/generator/components/name/name.component.html",
+        "ext": ".html",
+        "mtime": 1591391788164.0803
+      },
+      {
+        "file": "apps/snippeter/src/app/generator/components/name/name.component.scss",
+        "ext": ".scss",
+        "mtime": 1586368738156.0103
+      },
+      {
+        "file": "apps/snippeter/src/app/generator/components/name/name.component.spec.ts",
+        "ext": ".ts",
+        "mtime": 1586368738157.007
+      },
+      {
+        "file": "apps/snippeter/src/app/generator/components/name/name.component.ts",
+        "ext": ".ts",
+        "mtime": 1586368738159.0017
+      },
+      {
+        "file": "apps/snippeter/src/app/generator/components/prefix/prefix.component.html",
+        "ext": ".html",
+        "mtime": 1591391788165.0686
+      },
+      {
+        "file": "apps/snippeter/src/app/generator/components/prefix/prefix.component.scss",
+        "ext": ".scss",
+        "mtime": 1586368738160.9963
+      },
+      {
+        "file": "apps/snippeter/src/app/generator/components/prefix/prefix.component.spec.ts",
+        "ext": ".ts",
+        "mtime": 1586368738162.9917
+      },
+      {
+        "file": "apps/snippeter/src/app/generator/components/prefix/prefix.component.ts",
+        "ext": ".ts",
+        "mtime": 1586368738185.9292
+      },
+      {
+        "file": "apps/snippeter/src/app/generator/components/toolbar/download/download-modal/download-modal.component.html",
+        "ext": ".html",
+        "mtime": 1586368738195.9023
+      },
+      {
+        "file": "apps/snippeter/src/app/generator/components/toolbar/download/download-modal/download-modal.component.scss",
+        "ext": ".scss",
+        "mtime": 1586368738639.7163
+      },
+      {
+        "file": "apps/snippeter/src/app/generator/components/toolbar/download/download-modal/download-modal.component.spec.ts",
+        "ext": ".ts",
+        "mtime": 1586368738641.7112
+      },
+      {
+        "file": "apps/snippeter/src/app/generator/components/toolbar/download/download-modal/download-modal.component.ts",
+        "ext": ".ts",
+        "mtime": 1586368739270.031
+      },
+      {
+        "file": "apps/snippeter/src/app/generator/components/toolbar/download/download.component.html",
+        "ext": ".html",
+        "mtime": 1586368739272.0266
+      },
+      {
+        "file": "apps/snippeter/src/app/generator/components/toolbar/download/download.component.scss",
+        "ext": ".scss",
+        "mtime": 1586368739413.6472
+      },
+      {
+        "file": "apps/snippeter/src/app/generator/components/toolbar/download/download.component.spec.ts",
+        "ext": ".ts",
+        "mtime": 1586368739414.6445
+      },
+      {
+        "file": "apps/snippeter/src/app/generator/components/toolbar/download/download.component.ts",
+        "ext": ".ts",
+        "mtime": 1586368739415.6416
+      },
+      {
+        "file": "apps/snippeter/src/app/generator/components/toolbar/upload/upload.component.html",
+        "ext": ".html",
+        "mtime": 1586368739416.6392
+      },
+      {
+        "file": "apps/snippeter/src/app/generator/components/toolbar/upload/upload.component.scss",
+        "ext": ".scss",
+        "mtime": 1586368739417.6367
+      },
+      {
+        "file": "apps/snippeter/src/app/generator/components/toolbar/upload/upload.component.spec.ts",
+        "ext": ".ts",
+        "mtime": 1586368739418.6338
+      },
+      {
+        "file": "apps/snippeter/src/app/generator/components/toolbar/upload/upload.component.ts",
+        "ext": ".ts",
+        "mtime": 1586368739419.6316
+      },
+      {
+        "file": "apps/snippeter/src/app/generator/generator-routing.module.ts",
+        "ext": ".ts",
+        "mtime": 1586368739420.6294
+      },
+      {
+        "file": "apps/snippeter/src/app/generator/generator.component.html",
+        "ext": ".html",
+        "mtime": 1591391788165.0686
+      },
+      {
+        "file": "apps/snippeter/src/app/generator/generator.component.scss",
+        "ext": ".scss",
+        "mtime": 1586368739422.6228
+      },
+      {
+        "file": "apps/snippeter/src/app/generator/generator.component.spec.ts",
+        "ext": ".ts",
+        "mtime": 1586368739424.6187
+      },
+      {
+        "file": "apps/snippeter/src/app/generator/generator.component.ts",
+        "ext": ".ts",
+        "mtime": 1591391788166.1052
+      },
+      {
+        "file": "apps/snippeter/src/app/generator/generator.module.ts",
+        "ext": ".ts",
+        "mtime": 1591391788167.1055
+      },
+      {
+        "file": "apps/snippeter/src/app/generator/services/download-snippet/download-snippet.service.spec.ts",
+        "ext": ".ts",
+        "mtime": 1586368739434.5918
+      },
+      {
+        "file": "apps/snippeter/src/app/generator/services/download-snippet/download-snippet.service.ts",
+        "ext": ".ts",
+        "mtime": 1586368739435.5886
+      },
+      {
+        "file": "apps/snippeter/src/app/generator/services/upload-snippet/upload-snippet.service.spec.ts",
+        "ext": ".ts",
+        "mtime": 1586368739436.5862
+      },
+      {
+        "file": "apps/snippeter/src/app/generator/services/upload-snippet/upload-snippet.service.ts",
+        "ext": ".ts",
+        "mtime": 1586368739646.0266
+      },
+      {
+        "file": "apps/snippeter/src/app/material.module.ts",
+        "ext": ".ts",
+        "mtime": 1587403309803.4807
+      },
+      {
+        "file": "apps/snippeter/src/app/navbar/navbar.component.html",
+        "ext": ".html",
+        "mtime": 1586368739650.017
+      },
+      {
+        "file": "apps/snippeter/src/app/navbar/navbar.component.scss",
+        "ext": ".scss",
+        "mtime": 1586368739651.0127
+      },
+      {
+        "file": "apps/snippeter/src/app/navbar/navbar.component.spec.ts",
+        "ext": ".ts",
+        "mtime": 1586368739652.011
+      },
+      {
+        "file": "apps/snippeter/src/app/navbar/navbar.component.ts",
+        "ext": ".ts",
+        "mtime": 1586368739654.005
+      },
+      {
+        "file": "apps/snippeter/src/assets/.gitkeep",
+        "ext": "",
+        "mtime": 1585867208076.3928
+      },
+      {
+        "file": "apps/snippeter/src/environments/environment.prod.ts",
+        "ext": ".ts",
+        "mtime": 1585867208077.7632
+      },
+      {
+        "file": "apps/snippeter/src/environments/environment.ts",
+        "ext": ".ts",
+        "mtime": 1585867208078.7632
+      },
+      {
+        "file": "apps/snippeter/src/favicon.ico",
+        "ext": ".ico",
+        "mtime": 1585867208059.826
+      },
+      {
+        "file": "apps/snippeter/src/index.html",
+        "ext": ".html",
+        "mtime": 1586368739655.0027
+      },
+      {
+        "file": "apps/snippeter/src/main.ts",
+        "ext": ".ts",
+        "mtime": 1585867208061.822
+      },
+      {
+        "file": "apps/snippeter/src/polyfills.ts",
+        "ext": ".ts",
+        "mtime": 1585867208061.822
+      },
+      {
+        "file": "apps/snippeter/src/styles.scss",
+        "ext": ".scss",
+        "mtime": 1586368739656.9973
+      },
+      {
+        "file": "apps/snippeter/src/test-setup.ts",
+        "ext": ".ts",
+        "mtime": 1585867208085.7793
+      },
+      {
+        "file": "apps/snippeter/tsconfig.app.json",
+        "ext": ".json",
+        "mtime": 1585867208059.826
+      },
+      {
+        "file": "apps/snippeter/tsconfig.json",
+        "ext": ".json",
+        "mtime": 1585867208058.8289
+      },
+      {
+        "file": "apps/snippeter/tsconfig.spec.json",
+        "ext": ".json",
+        "mtime": 1585867208085.3247
+      },
+      {
+        "file": "apps/snippeter/tslint.json",
+        "ext": ".json",
+        "mtime": 1585867208060.8232
+      }
+    ],
+    "api": [
+      {
+        "file": "apps/api/jest.config.js",
+        "ext": ".js",
+        "mtime": 1585867208100.3735
+      },
+      {
+        "file": "apps/api/src/app/.gitkeep",
+        "ext": "",
+        "mtime": 1585867208098.25
+      },
+      {
+        "file": "apps/api/src/app/app.controller.spec.ts",
+        "ext": ".ts",
+        "mtime": 1585867208102.1257
+      },
+      {
+        "file": "apps/api/src/app/app.controller.ts",
+        "ext": ".ts",
+        "mtime": 1586368737756.0784
+      },
+      {
+        "file": "apps/api/src/app/app.module.ts",
+        "ext": ".ts",
+        "mtime": 1591394547422.321
+      },
+      {
+        "file": "apps/api/src/app/app.service.spec.ts",
+        "ext": ".ts",
+        "mtime": 1586368737760.0676
+      },
+      {
+        "file": "apps/api/src/app/app.service.ts",
+        "ext": ".ts",
+        "mtime": 1586368737761.0654
+      },
+      {
+        "file": "apps/api/src/app/snippet/snippet.controller.spec.ts",
+        "ext": ".ts",
+        "mtime": 1586368737762.0627
+      },
+      {
+        "file": "apps/api/src/app/snippet/snippet.controller.ts",
+        "ext": ".ts",
+        "mtime": 1586368737780.0151
+      },
+      {
+        "file": "apps/api/src/app/snippet/snippet.module.ts",
+        "ext": ".ts",
+        "mtime": 1586368737782.0095
+      },
+      {
+        "file": "apps/api/src/app/snippet/snippet.schema.ts",
+        "ext": ".ts",
+        "mtime": 1586368737784.0046
+      },
+      {
+        "file": "apps/api/src/app/snippet/snippet.service.ts",
+        "ext": ".ts",
+        "mtime": 1591391788162.1091
+      },
+      {
+        "file": "apps/api/src/assets/.gitkeep",
+        "ext": "",
+        "mtime": 1585867208098.25
+      },
+      {
+        "file": "apps/api/src/environments/environment.prod.ts",
+        "ext": ".ts",
+        "mtime": 1585867208099.372
+      },
+      {
+        "file": "apps/api/src/environments/environment.ts",
+        "ext": ".ts",
+        "mtime": 1585867208099.372
+      },
+      {
+        "file": "apps/api/src/main.ts",
+        "ext": ".ts",
+        "mtime": 1591394665771.9607
+      },
+      {
+        "file": "apps/api/tsconfig.app.json",
+        "ext": ".json",
+        "mtime": 1585867208096.2505
+      },
+      {
+        "file": "apps/api/tsconfig.json",
+        "ext": ".json",
+        "mtime": 1585867208096.2505
+      },
+      {
+        "file": "apps/api/tsconfig.spec.json",
+        "ext": ".json",
+        "mtime": 1585867208101.3892
+      },
+      {
+        "file": "apps/api/tslint.json",
+        "ext": ".json",
+        "mtime": 1585867208094.9827
+      }
+    ]
+  }
+}
