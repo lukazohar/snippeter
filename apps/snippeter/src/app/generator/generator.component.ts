@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { ConstructsComponent } from './components/constructs/constructs.component';
 import { ITabstop, IPlaceholder, IChoice } from '@snippeter/api-interfaces';
+import { BodyComponent } from './components/body/body.component';
 
 @Component({
   selector: 'snippeter-generator',
@@ -14,7 +15,7 @@ export class GeneratorComponent implements OnInit {
   description = new FormControl('');
   body = new FormControl('');
 
-  selectedConstruct: string;
+  selectedConstruct = '';
 
   tabstops: Array<ITabstop> = [];
   placeholders: Array<IPlaceholder> = [];
@@ -22,6 +23,8 @@ export class GeneratorComponent implements OnInit {
 
   @ViewChild(ConstructsComponent, { static: false })
   constructsComponent: ConstructsComponent;
+  @ViewChild(BodyComponent, { static: false })
+  bodyComponent: BodyComponent;
 
   constructor() {}
 

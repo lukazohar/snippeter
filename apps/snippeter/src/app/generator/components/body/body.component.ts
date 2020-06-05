@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewChild } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { CdkTextareaAutosize } from '@angular/cdk/text-field';
 
@@ -15,4 +15,38 @@ export class BodyComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}
+
+  setCursorPosition(
+    selectionIndex: number,
+    constructType: string,
+    stopId: number
+  ) {
+    switch (constructType) {
+      case 'tabstop': {
+        this.setSelectionStartAndEnd(
+          selectionIndex + 1 + stopId.toString().length
+        );
+        break;
+      }
+      case 'placeholder': {
+        this.setSelectionStartAndEnd(
+          selectionIndex + 3 + stopId.toString().length
+        );
+        break;
+      }
+      case 'choice': {
+        this.setSelectionStartAndEnd(
+          selectionIndex + 3 + stopId.toString().length
+        );
+        break;
+      }
+    }
+  }
+
+  setSelectionStartAndEnd(index: number) {
+    // @ts-ignore
+    this.autosize._elementRef.nativeElement.selectionStart = index;
+    // @ts-ignore
+    this.autosize._elementRef.nativeElement.selectionEnd = index;
+  }
 }

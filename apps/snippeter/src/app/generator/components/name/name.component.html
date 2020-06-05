@@ -1,4 +1,9 @@
-<mat-form-field appearance="outline">
+<mat-form-field appearance="outline" auto>
   <mat-label>name</mat-label>
-  <input matInput [formControl]="name" placeholder="name" />
+  <input
+    matInput
+    [formControl]="name"
+    placeholder="name"
+    autocomplete="nofill"
+  />
 </mat-form-field>
