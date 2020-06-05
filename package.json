@@ -6,7 +6,7 @@
     "ng": "ng",
     "nx": "nx",
     "start": "node dist/apps/api/main",
-    "build": "ng build",
+    "build": "ng build --prod snippeter & ng build --prod api",
     "test": "ng test",
     "lint": "nx workspace-lint && ng lint",
     "e2e": "ng e2e",
