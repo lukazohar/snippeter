@@ -16,7 +16,7 @@ import { join } from 'path';
     }),
     MongooseModule.forRoot(
       // mongodb+srv://<user>:<password>
-      'mongodb+srv://admin:admin@cluster0-tyt0o.mongodb.net/snippets?retryWrites=true&w=majority',
+      'mongodb+srv://admin:admin@cluster0.deie7.mongodb.net/snippets?retryWrites=true&w=majority',
       {
         connectionName: 'snippets',
         useNewUrlParser: true,
@@ -25,7 +25,7 @@ import { join } from 'path';
     ),
     MongooseModule.forRoot(
       // mongodb+srv://<user>:<password>
-      'mongodb+srv://admin:admin@cluster0-tyt0o.mongodb.net/users?retryWrites=true&w=majority',
+      'mongodb+srv://admin:admin@cluster0.deie7.mongodb.net/users?retryWrites=true&w=majority',
       {
         connectionName: 'users',
         useNewUrlParser: true,
