@@ -1,4 +1,4 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import {
@@ -6,11 +6,13 @@ import {
   CreateSnippetDto,
   UpdateSnippetDto
 } from '@snippeter/api-interfaces';
+import { SnippetDocument } from './snippet.schema';
 
 @Injectable()
 export class SnippetService {
-  // @ts-ignore
-  constructor(@InjectModel('Snippet') private snippetModel: Model<ISnippet>) {}
+  constructor(
+    @InjectModel('Snippet') private snippetModel: Model<SnippetDocument>
+  ) {}
 
   async findAll(): Promise<ISnippet[]> {
     return this.snippetModel.find().exec();
@@ -26,7 +28,6 @@ export class SnippetService {
       createdAt: new Date(),
       modifiedAt: new Date()
     };
-    // @ts-ignore
     return new this.snippetModel(newSnippet).save();
   }
 
@@ -37,7 +38,6 @@ export class SnippetService {
     if (snippet.description)
       updatedSnippet.config.description = snippet.description;
     if (snippet.body) updatedSnippet.config.body = snippet.body;
-    // @ts-ignore
     return updatedSnippet.save();
   }
 

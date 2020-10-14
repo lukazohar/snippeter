@@ -1,14 +1,22 @@
-import * as mongoose from 'mongoose';
+import { Document } from 'mongoose';
+import { ISnippet, ISnippetConfig } from '@snippeter/api-interfaces';
+import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 
-export const SnippetSchema = new mongoose.Schema({
-  id: String,
-  config: {
-    name: String,
-    prefix: String,
-    description: String,
-    body: String
-  },
-  createdAt: Date,
-  modifiedAt: Date,
-  public: Boolean
-});
+export type SnippetDocument = Snippet & Document;
+
+@Schema()
+export class Snippet implements ISnippet {
+  @Prop()
+  createdAt: Date;
+
+  @Prop()
+  modifiedAt: Date;
+
+  @Prop()
+  public: boolean;
+
+  @Prop()
+  config: ISnippetConfig;
+}
+
+export const SnippetSchema = SchemaFactory.createForClass(Snippet);

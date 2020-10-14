@@ -7,31 +7,23 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { SnippetModule } from './snippet/snippet.module';
 
 import { ServeStaticModule } from '@nestjs/serve-static';
+import { ConfigModule } from '@nestjs/config';
 import { join } from 'path';
+import { MongoModule } from './mongo.module';
 
 @Module({
   imports: [
     ServeStaticModule.forRoot({
       rootPath: join(__dirname, '..', 'snippeter')
     }),
-    MongooseModule.forRoot(
-      // mongodb+srv://<user>:<password>
-      'mongodb+srv://admin:admin@cluster0-tyt0o.mongodb.net/snippets?retryWrites=true&w=majority',
-      {
-        connectionName: 'snippets',
-        useNewUrlParser: true,
-        useUnifiedTopology: true
-      }
-    ),
-    MongooseModule.forRoot(
-      // mongodb+srv://<user>:<password>
-      'mongodb+srv://admin:admin@cluster0-tyt0o.mongodb.net/users?retryWrites=true&w=majority',
-      {
-        connectionName: 'users',
-        useNewUrlParser: true,
-        useUnifiedTopology: true
-      }
-    ),
+    ConfigModule.forRoot({
+      envFilePath: [
+        './environments/.env.development',
+        './environments/.env.production'
+      ],
+      isGlobal: true
+    }),
+    MongoModule,
     SnippetModule
   ],
   controllers: [AppController],
