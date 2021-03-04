@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ITabstop, IPlaceholder, IChoice } from '@snippeter/api-interfaces';
 import { FormControl } from '@angular/forms';
 import { MatListOption } from '@angular/material/list';
@@ -205,6 +205,7 @@ export class ConstructsComponent implements OnInit {
   }
 
   addChoice(stringIndex: number) {
+    /* 
     const newPlaceholder: IPlaceholder = {
       stopId: this.nextStopIndex(),
       name: ''
@@ -215,10 +216,10 @@ export class ConstructsComponent implements OnInit {
       ('${' + newPlaceholder.stopId + '||}') +
       newBody.slice(stringIndex);
     this.body.setValue(newBody);
-    this.placeholders.push(newPlaceholder);
+    this.placeholders.push(newPlaceholder); */
   }
 
-  editPlaceholderName(placeholder: IPlaceholder) {
+  editPlaceholderName(placeholder: IPlaceholder, index: number) {
     let currTextAreaValue = this.body.value;
 
     const tagStartIndex = this.placeholdersTags.get(placeholder.stopId);
@@ -230,7 +231,5 @@ export class ConstructsComponent implements OnInit {
       currTextAreaValue.substring(0, valueStartIndex) +
       placeholder.name +
       currTextAreaValue.substring(valueEndIndex);
-
-    this.body.setValue(currTextAreaValue);
   }
 }

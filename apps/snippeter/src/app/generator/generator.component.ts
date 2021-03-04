@@ -29,4 +29,20 @@ export class GeneratorComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  addTab(event) {
+    const index = event.target.selectionStart;
+
+    event.preventDefault();
+
+    const newBody =
+      this.body.value.substring(0, event.target.selectionStart) +
+      '    ' +
+      this.body.value.substring(event.target.selectionStart);
+    this.body.setValue(newBody);
+
+    this.bodyComponent.setCursorPosition(index + 4);
+
+    this.constructsComponent.scanForChanges(this.body.value);
+  }
 }

@@ -18,8 +18,8 @@ export class BodyComponent implements OnInit {
 
   setCursorPosition(
     selectionIndex: number,
-    constructType: string,
-    stopId: number
+    constructType?: string,
+    stopId?: number
   ) {
     switch (constructType) {
       case 'tabstop': {
@@ -39,6 +39,9 @@ export class BodyComponent implements OnInit {
           selectionIndex + 3 + stopId.toString().length
         );
         break;
+      }
+      default: {
+        this.setSelectionStartAndEnd(selectionIndex);
       }
     }
   }
